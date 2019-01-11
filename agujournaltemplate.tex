@@ -1,31 +1,3 @@
-%% March 2018
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
-%
-% This file includes commands and instructions
-% given in the order necessary to produce a final output that will
-% satisfy AGU requirements, including customized APA reference formatting.
-%
-% You may copy this file and give it your
-% article name, and enter your text.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PLEASE DO NOT USE YOUR OWN MACROS
-% DO NOT USE \newcommand, \renewcommand, or \def, etc.
-%
-% FOR FIGURES, DO NOT USE \psfrag or \subfigure.
-% DO NOT USE \psfrag or \subfigure commands.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Step 1: Set the \documentclass
-%
-% There are two options for article format:
-%
-% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
-% The draft option produces double spaced output.
-%
-
-%% To submit your paper:
 \documentclass[draft,linenumbers]{agujournal2018}
 \usepackage{apacite}
 \usepackage{url} %this package should fix any errors with URLs in refs.
@@ -46,51 +18,10 @@
 
 \draftfalse
 
-% Now, type in the journal name: \journalname{<Journal Name>}
-
-% ie, \journalname{Journal of Geophysical Research}
-%% Choose from this list of Journals:
-%
-% JGR-Atmospheres
-% JGR-Biogeosciences
-% JGR-Earth Surface
-% JGR-Oceans
-% JGR-Planets
-% JGR-Solid Earth
-% JGR-Space Physics
-% Global Biochemical Cycles
-% Geophysical Research Letters
-% Paleoceanography
-% Radio Science
-% Reviews of Geophysics
-% Tectonics
-% Space Weather
-% Water Resource Research
-% Geochemistry, Geophysics, Geosystems
-% Journal of Advances in Modeling Earth Systems (JAMES)
-% Earth's Future
-% Earth and Space Science
-% Geohealth
-%
-
 \journalname{Space Weather}
 
-
 \begin{document}
-
-%% ------------------------------------------------------------------------ %%
-%  Title
-%
-% (A title should be specific, informative, and brief. Use
-% abbreviations only if they are defined in the abstract. Titles that
-% start with general keywords then specific terms are optimized in
-% searches)
-%
-%% ------------------------------------------------------------------------ %%
-
-% Example: \title{This is a test title}
-
-\title{=enter title here=}
+\title{A Test of the Frequency Independence Assumption of the System Parameters used in Geomagnetically Induced Current Calculations}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -111,15 +42,14 @@
 % Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
 % Author\affil{3,4}\thanks{Also funded by Monsanto.}}
 
-\authors{=list all authors here=}
+\authors{R.S. Weigel\affil{1} and P.J. Cilliers\affil{2}}
 
+\affiliation{1}{Space Weather Lab, George Mason University}
+\affiliation{2}{South African National Space Agency}
 
-% \affiliation{1}{First Affiliation}
-% \affiliation{2}{Second Affiliation}
-% \affiliation{3}{Third Affiliation}
-% \affiliation{4}{Fourth Affiliation}
+\affiliation{1}{4400 University Drive, Fairfax VA 22030}
+\affiliation{2}{Hospital Street, Hermanus 7200}
 
-\affiliation{=number=}{=Affiliation Address=}
 %(repeat as many times as is necessary)
 
 %% Corresponding Author:
@@ -132,79 +62,27 @@
 
 % Example: \correspondingauthor{First and Last Name}{email@address.edu}
 
-\correspondingauthor{=name=}{=email address=}
-
-%% Keypoints, final entry on title page.
-
-% Example:
-% \begin{keypoints}
-% \item	List up to three key points (at least one is required)
-% \item	Key Points summarize the main points and conclusions of the article
-% \item	Each must be 100 characters or less with no special characters or punctuation
-% \end{keypoints}
+\correspondingauthor{R.S. Weigel}{rweigel@gmu.edu}
 
 %  List up to three key points (at least one is required)
 %  Key Points summarize the main points and conclusions of the article
 %  Each must be 100 characters or less with no special characters or punctuation
 
 \begin{keypoints}
-\item = enter point 1 here =
-\item = enter point 2 here =
-\item = enter point 3 here =
+\item The system parameters derived from GIC and geoelectric field measurements are frequency dependent
+\item A model with frequency dependence significantly outperforms a frequency independent model in predicting GIC
+\item The best predictions are found when the model input is not the measured geoelectric field but rather the geoelectric field predicted by a transfer function model driven by the geomagnetic field
 \end{keypoints}
-
-%% ------------------------------------------------------------------------ %%
-%
-%  ABSTRACT
-%
-% A good abstract will begin with a short description of the problem
-% being addressed, briefly describe the new data or analyses, then
-% briefly states the main conclusion(s) and how they are supported and
-% uncertainties.
-%% ------------------------------------------------------------------------ %%
-
-%% \begin{abstract} starts the second page
 
 \begin{abstract}
 A common assumption used in estimating geomagnetically induced currents (GICs) in a power system given a direct measurement or indirect estimate (via a magnetotelluric transfer function) of the horizontal geoelectric field components $E_x$ and $E_y$ on Earth’s surface is that the system is resistive. That is, the approximation GIC(t) = $a_oE_x(t) + b_oE_y(t)$ (Model 1) is used, where $a_o$ and $b_o$ are frequency independent network parameters at frequencies associated with significant amplitudes of the geoelectric field.  We provide the first test of this assumption using GIC measurements made in a 187 kV transformer connected to a $\sim$100 km line in Memanbetsu, Japan and geoelectric field measurements made at the Memanbetsu Magnetic Observatory $\sim$10 kilometers away.  We compute frequency dependent network parameters  $A(\omega)$ and $B(\omega)$ in Model 2, $GIC(\omega) = A(\omega)E_x(\omega) + B(\omega)E_y(\omega)$, and find that they are not frequency independent and that this model provides a significantly better representation of measured GIC.
 \end{abstract}
 
-
-%% ------------------------------------------------------------------------ %%
-%
-%  TEXT
-%
-%% ------------------------------------------------------------------------ %%
-
-%%% Suggested section heads:
-% \section{Introduction}
-%
-% The main text should start with an introduction. Except for short
-% manuscripts (such as comments and replies), the text should be divided
-% into sections, each with its own heading.
-
-% Headings should be sentence fragments and do not begin with a
-% lowercase letter or number. Examples of good headings are:
-
-% \section{Materials and Methods}
-% Here is text on Materials and Methods.
-%
-% \subsection{A descriptive heading about methods}
-% More about Methods.
-%
-% \section{Data} (Or section title might be a descriptive heading about data)
-%
-% \section{Results} (Or section title might be a descriptive heading about the
-% results)
-%
-% \section{Conclusions}
-
-
 \section{Introduction}
 
-Geomagnetically induced currents (GICs) are electric currents in man-made conducting systems due to electric fields induced near Earth’s surface.  These fields are a result of time variations in ionospheric currents on timescales on the order of hours or less and the movement of Earth’s surface relative to slow-varying current systems in Earth’s ionosphere that are near stationary relative to the Sun [REF].  Of particular interest are currents induced in electric power systems as they can lead to system degradation, disruption, and failure [REF].  Accurate estimation of GICs given E or B is important for power system design [REF] retrospective analysis [REF] and for the mitigation of the impacts of space weather on power systems.
+Geomagnetically induced currents (GICs) are electric currents in man-made conducting systems due to electric fields induced near Earth’s surface.  These fields are a result of time variations in ionospheric currents on timescales on the order of hours or less and the movement of Earth’s surface relative to slow-varying current systems in Earth’s ionosphere that are near stationary relative to the Sun [REF].  Of particular interest are currents induced in electric power systems as they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012}.  Accurate estimation of GICs given direct measurements of the electric field (or estimates based on the geomagnetic field) is important for power system design [REF] retrospective analysis [REF] and for the mitigation of the impacts of space weather on power systems.
 
-A common assumption made in estimates of GIC using either measured or estimated values of E is that the power system is resistive or quasi-DC so that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}.  The coefficients $a_o$ and $b_o$ can then be calculated analytically using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods [e.g., Boteler, 2014a; Boteler and Pirjola, 2014b]. This assumption has been used or stated in many works in the past decade, for example, \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Viljanen2012}.
+A common assumption made in estimates of GIC using either measured or estimated values of E is that the power system is resistive or quasi-DC so that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}.  The coefficients $a_o$ and $b_o$ can then be calculated analytically using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods [e.g., Boteler, 2014a; Boteler and Pirjola, 2014b]. This assumption has been used or stated in many works in the past decade, for example, \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Viljanen2012,Overbye2012}.
 
 In this work, we use a unique dataset in which measurements of the geoelectric field and geomagnetic field were made near a site where GICs were being measured in a power system.  We first estimate the system parameters $a_o$ and $b_o$ using conventional methods, which assume that they are frequency independent.  Then, we use a model in which the system parameters are frequency dependent, compute the frequency dependence, and compare this model with the traditional resistive model. 
 
@@ -212,7 +90,7 @@ In this work, we use a unique dataset in which measurements of the geoelectric f
 
 The 1-second-cadence GIC data used in this paper span cover a total of 36 days across the 10 intervals: 2006-04-02 -- 2006-04-10, 2006-07-25 -- 2006-07-29, 2006-08-05 -- 2006-08-08, 2006-08-19 -- 2006-08-21, 2006-11-07 -- 2006-11-12, 2006-11-28 -- 2006-11-29, 2006-12-01 -- 2006-12-01, 2006-12-14 -- 2006-12-15, 2007-11-18 -- 2007-11-20, and 2007-11-22 -- 2007-11-22 that have been presented previously in \citet{Watari2009} and \cite{Watari2015}.
 
-One-second-cadence geoelectric field and geomagnetic field data were obtained from the Kakioka Magnetic Observatory of the Japan Meteorological Agency data portal [http://www.kakioka-jma.go.jp/obsdata/metadata/en]. Data for the longest continuous time span, 2006-04-02 through 2006-04-10 are shown in the top and middle panels of Figure 1.
+One-second-cadence geoelectric field and geomagnetic field data were obtained from the Kakioka Magnetic Observatory of the Japan Meteorological Agency data portal. Data for the longest continuous time span, 2006-04-02 through 2006-04-10 are shown in the top and middle panels of Figure 1.
 
 The GIC dataset includes 1-second raw data and a 1 Hz low-pass filtered raw measurements.  The results presented here are for the 1 Hz low-pass filtered GIC values and data for the time interval 2006-04-02 through 2006-04-10 is shown in the bottom panel of Figure 1.
 
@@ -392,8 +270,7 @@ The subscripts $x$, $y$, and $z$ correspond to North, East, and Downward, respec
 
 
 \acknowledgments
- = enter acknowledgments here =
-
+Magnetic and electric field data made at the Kakioka Magnetic Observatory was obtained from the Japan Meteorological Agency data portal http://www.kakioka-jma.go.jp/obsdata/metadata/en.
 
 %% ------------------------------------------------------------------------ %%
 %% References and Citations
