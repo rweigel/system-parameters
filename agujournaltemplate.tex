@@ -92,6 +92,13 @@ The 1-second-cadence GIC data used in this paper span cover a total of 36 days a
 
 One-second-cadence geoelectric field and geomagnetic field data were obtained from the Kakioka Magnetic Observatory of the Japan Meteorological Agency data portal. Data for the longest continuous time span, 2006-04-02 through 2006-04-10 are shown in the top and middle panels of Figure 1.
 
+\begin{figure}[h]
+\centering
+\includegraphics[]{figures/plot_raw_All_20060402.pdf}
+\caption{(Top) One-second-cadence geomagnetic field measured at the Memanbetsu Magnetic Observatory (MMB). (Middle) One-second-cadence geoelectric field measured at the Memanbetsu Magnetic Observatory (MMB) X km from the Memanbetsu substation. (Bottom) One-second-cadence GIC measurements measured in a grounded neutral point of a Y-connected three-phase transformer connected to a 187 kV bus at the Memanbetsu substation of the Hokkaido Power Co.}
+\label{figure1}
+\end{figure}
+
 The GIC dataset includes 1-second raw data and a 1 Hz low-pass filtered raw measurements.  The results presented here are for the 1 Hz low-pass filtered GIC values and data for the time interval 2006-04-02 through 2006-04-10 is shown in the bottom panel of Figure 1.
 
 The GIC data contains non-physical spikes that are followed by a relaxation time of approximately 60 seconds. These spikes were removed by identifying times ts when the change in $|GIC|$ was greater than $0.04$ Amps and then data in a window $GIC(t_s-2)$ through $GIC(t_s+100)$ was replaced with a linear interpolation of the values from $GIC(t_s-3)$ to $GIC(t_s + 101)$.
