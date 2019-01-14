@@ -1,5 +1,4 @@
-%\def\currversion{Aug 6, 2016}
-\def\currversion{February 17, 2018}
+\def\currversion{December 12, 2018}
 
   %****************************************************************%
   %*                                                              *%
@@ -26,12 +25,13 @@
 %%%    Remove biblatex.
 %%%    Use apacite instead of agufull08,
 
-
+%%%  2018-07-17 / NRV
+%%%  thanks to John Haiducek for help with citep error
 
 
 
 \ProvidesClass{agujournal2018}
-              [08/06/2016]
+              [12/12/2018]
 
 %% SEARCH BELOW FOR THE NUMBER TO FIND PARTICULAR MACRO GROUP
 
@@ -83,6 +83,10 @@
 
 %% xcolor.sty
 \RequirePackage{xcolor}
+\RequirePackage{url}
+
+%% for better track changes
+%\RequirePackage{trackchanges}
 
 %% used for running head which is in light gray
 
@@ -95,6 +99,7 @@
 
 %% this package makes paragraphs indent after section heads
 \RequirePackage{indentfirst}
+
 
 %% \RaggedRight makes the right margin go in and out; if this is commented out
 %% the default will be a right justified margin.
@@ -1132,16 +1137,20 @@ width0pt\relax}\\*\noindent\ignorespaces}
 
 
 % Formats bibliography, this .sty file needs to be entered here
-%\RequirePackage{natbib}
+
  %
 % When using NatBib, this sets brackets for citations:
 %\renewcommand\NAT@open{(} \renewcommand\NAT@close{)}   %xx Parens by default, but not using anyways.  DC
 
+%\RequirePackage{apacite}
 \RequirePackage{apacite}
-\let\cite\shortcite %xx So get et al. with three authors the first time.
-\let\citep\cite %xx A natbib command.
-\let\citet\citeA %xx Ditto.
-%\requirepackage{URL}
+\RequirePackage{natbib}
+%\let\cite\shortcite %xx So get et al. with three authors the first time.
+%\let\citep\shortcite %xx A natbib command.
+%\let\citet\shortcite %xx Ditto.
+%\let\citet\citeA %xx Ditto.
+
+
 
 %% end Bibliography, and References
 
