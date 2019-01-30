@@ -22,7 +22,7 @@
 \journalname{Space Weather}
 
 \begin{document}
-\title{A Test of the Frequency Independence Assumption of the System Parameters used in Geomagnetically Induced Current Calculations}
+\title{A Test of the Frequency Independence Assumption of the Power System Parameters used in Geomagnetically Induced Current Calculations}
 
 \authors{R.S. Weigel\affil{1} and P.J. Cilliers\affil{2}}
 
@@ -36,21 +36,21 @@
 
 \begin{keypoints}
 \item The power system parameters derived from GIC and geoelectric field measurements are frequency dependent.
-\item A model with frequency dependence significantly outperforms a frequency independent model in predicting GIC.
+\item A GIC prediction model with frequency dependence significantly outperforms a frequency independent model.
 \item The best predictions are found when the model input is not the measured geoelectric field but rather the geoelectric field predicted by a transfer function model driven by the geomagnetic field.
 \end{keypoints}
 
 \begin{abstract}
-A common assumption used in estimating geomagnetically induced currents (GICs) in a power system given a direct measurement or indirect estimate (via a transfer function with input of the geomagnetic field) of the horizontal geoelectric field components $E_x$ and $E_y$ on Earth's surface is that the system is resistive. That is, the approximation $GIC(t)$  $=$ $a_oE_x(t) + b_oE_y(t)$ (Model 1) is used, where $a_o$ and $b_o$ are frequency independent network parameters.  We provide the first test of this assumption using GIC measurements made in a 187 kV transformer connected to a $\sim$100 km power line in Memanbetsu, Japan and geoelectric field measurements made at the Memanbetsu Magnetic Observatory $\sim$10 kilometers away.  We compute frequency dependent network parameters  $A(\omega)$ and $B(\omega)$ in Model 2, $GIC(\omega)$ $=$ $A(\omega)E_x(\omega) + B(\omega)E_y(\omega)$, and find that they are not frequency independent and that this model provides a significantly better representation of measured GIC.
+A common assumption used in estimating geomagnetically induced currents (GICs) in a power system given a direct measurement or indirect estimate (via a transfer function with input of the geomagnetic field) of the horizontal geoelectric field components $E_x$ and $E_y$ on Earth's surface is that the system is resistive. That is, the approximation $GIC(t)$  $=$ $a_oE_x(t) + b_oE_y(t)$ (Model 1) is used, where $a_o$ and $b_o$ are frequency independent network parameters.  We provide the first test of this assumption using GIC measurements made in a 187 kV transformer connected to a $\sim$100 km power line in Memanbetsu, Japan and geoelectric field measurements made at the Memanbetsu Magnetic Observatory $\sim$10 kilometers away.  We compute frequency dependent network parameters  $A(\omega)$ and $B(\omega)$ in Model 2, $GIC(\omega)$ $=$ $A(\omega)E_x(\omega) + B(\omega)E_y(\omega)$, and find that they are frequency dependent and that this model provides a significantly better representation of measured GIC.
 \end{abstract}
 
 \section{Introduction}
 
-Geomagnetically induced currents (GICs) are electric currents in man-made conducting systems due to electric fields induced near Earth's surface. These fields are a result of time variations in ionospheric currents on timescales on the order of hours or less \citep{Ohtani2000} and the movement of Earth's surface relative to slow-varying current systems in Earth's ionosphere that are near stationary relative to the Sun \citep{Stening2013}. Of particular interest are currents induced in electric power systems as they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012}. Accurate estimation of GICs given direct measurements of the electric field (or estimates based on the geomagnetic field) is important for power system design [REF] retrospective analysis [REF] and for the mitigation of the impacts of space weather on power systems.
+Geomagnetically induced currents (GICs) are electric currents in man-made conducting systems due to electric fields induced near Earth's surface. These fields are a result of time variations in ionospheric currents on timescales on the order of hours or less \citep{Ohtani2000} and the movement of Earth's surface relative to slow-varying current systems in Earth's ionosphere that are near stationary relative to the Sun \citep{Stening2013}. Of particular interest are currents induced in electric power systems as they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012}. Accurate estimation of GICs given direct measurements of the electric field (or estimates based on the geomagnetic field) is important for power system design, retrospective analysis, and for the mitigation of the impacts of space weather on power systems [REFS].
 
-A common assumption made in estimates of GIC using either measured or estimated values of the horizontal geoelectric field at Earth's surface, $\mathbf{E}$, is that the power system is resistive or quasi-DC so that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}.  The coefficients $a_o$ and $b_o$ can then be calculated analytically using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods \citep[e.g.][]{Boteler2014a,Boteler2014b}). This assumption has been used or stated in many works in the past decade, for example, \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Viljanen2012,Overbye2012}.
+A common assumption made in estimates of GIC using either measured or estimated values of the horizontal geoelectric field at Earth's surface, $\mathbf{E}$, is that the power system is resistive or quasi-DC so that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}.  The coefficients $a_o$ and $b_o$ can then be calculated analytically using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods \citep[e.g.][]{Boteler2014a,Boteler2014b}. This assumption has been used or stated in many works in the past decade, for example, \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Viljanen2012,Overbye2012}.
 
-In this work, we use a unique dataset in which measurements $\mathbf{E}$ and the surface horizontal geomagnetic field, $\mathbf{B}$ were made near a site where GICs were being measured in an electric power system.  We first estimate the system parameters $a_o$ and $b_o$ using conventional methods, which assume that they are frequency independent.  Then, we use a model in which the system parameters are frequency dependent, compute the frequency dependence, and compare this model with the traditional frequency independent model. 
+In this work, we use a unique dataset in which measurements $\mathbf{E}$ and the surface horizontal geomagnetic field, $\mathbf{B}$, were made near a site where GICs were being measured in an electric power system.  We first estimate the system parameters $a_o$ and $b_o$ using conventional methods, which assume that they are frequency independent.  Then, we use a model in which the system parameters are frequency dependent, compute the frequency dependence, and compare this model with the traditional frequency independent model. 
 
 \section{Data}
 
@@ -58,13 +58,13 @@ The 1-second-cadence GIC data used in this paper span a total of 36 days across 
 
 One-second-cadence geoelectric field and geomagnetic field data from Kakioka Magnetic Observatory were obtained from the Japan Meteorological Agency data portal. Data for the longest continuous time span, 2006-04-02 through 2006-04-10 are shown in the top and middle panels of Figure~\ref{figure1}.
 
-Unphysical spikes in the electric field measurements were concluded when the absolute value of a component $i$ of the electric field changed by more than 1 mV/km at time $t_s$, and the values $E_i(t_s-2)$ through $E_i(t_s+4)$ were replaced with a linear interpolation of the values at $E_i(t_s-3)$ and $E_i(t_s + 5)$.
+Unphysical spikes in the electric field measurements were concluded when the absolute value of a component $i$ of the electric field changed by more than 1 mV/km at time $t_s$, and the values $E_i(t_s-2)$ through $E_i(t_s+4)$ were replaced with a linear interpolation of the values at $E_i(t_s-3)$ and $E_i(t_s + 5)$. In the sample shown in Figure~\ref{figure1}, 21 spikes were identified in $E_x$ and zero in $E_y$.
 
 The only modifications made to the magnetic field measurements was the replacement of 36 data points in all components of the magnetic field on 2006-08-06 with linearly interpolated values. The values for all components were the same and much larger than the surrounding values.
 
-The GIC dataset includes 1-second raw data and a 1 Hz low-pass filtered raw measurements.  The results presented here are for the 1 Hz low-pass filtered GIC values and data for the time interval 2006-04-02 through 2006-04-10 is shown in the bottom panel of Figure~\ref{figure1}.
+The GIC dataset includes 1-second raw data and 1 Hz low-pass filtered raw measurements.  The results presented here are for the 1 Hz low-pass filtered GIC values and data for the time interval 2006-04-02 through 2006-04-10 is shown in the bottom panel of Figure~\ref{figure1}.
 
-The GIC data contains non-physical spikes that are followed by a relaxation time of approximately 60 seconds. These spikes were removed by identifying times $t_s$ when the change in $|GIC|$ was greater than $0.04$ Amps and then data in a window $GIC(t_s-2)$ through $GIC(t_s+100)$ was replaced with a linear interpolation of the values at $GIC(t_s-3)$ and $GIC(t_s + 101)$.
+The GIC data contains non-physical spikes that are followed by a relaxation time of approximately 80 seconds. These spikes were removed by identifying times $t_s$ when the change in $|GIC|$ was greater than $0.04$ Amps and then data in a window $GIC(t_s-2)$ through $GIC(t_s+100)$ was replaced with a linear interpolation of the values at $GIC(t_s-3)$ and $GIC(t_s + 101)$. In the example interval shown in Figure~\ref{figure1}, 493 spikes were identified.
 
 \begin{figure}[h]
 \centering
@@ -85,13 +85,13 @@ G_o(t) = a_oE_x(t) + b_oE_y(t)
 \end{linenomath*}
 
 \noindent
-we form the matrix equation $GIC = \underline{\mathbf{E}}\cdot\mathbf{p}$, where GIC is a 864000x1 matrix of observations, $\mathbf{p} = [a,b]^T$, and $\underline{\mathbf{E}}$ is a 86400x2 matrix with $N$ rows of $[E_x(t), E_y(t)]$ observations. The values of p are then obtained using a standard linear regression solver. The values of $a_o$ and $b_o$ determined in this way correspond to those that minimize the sum-of-squares of $GIC(t)-G_o(t)$ for all values of $t$. \citep[][ provided the mathematically equivalent closed-form equations.]{Pulkkinen2007}
+we form the matrix equation $GIC = \underline{\mathbf{E}}\cdot\mathbf{p}$, where GIC is a 864000x1 matrix of observations, $\mathbf{p} = [a_o,b_o]^T$, and $\underline{\mathbf{E}}$ is a 86400x2 matrix with $N$ rows of $[E_x(t), E_y(t)]$ observations. The values of $\mathbf{p}$ are then obtained using a standard linear regression solver. The values of $a_o$ and $b_o$ determined in this way correspond to those that minimize the sum-of-squares of $GIC(t)-G_o(t)$ for all values of $t$. \citep[][ provided the mathematically equivalent closed-form equations.]{Pulkkinen2007}
 
 In Model 2, we assume that the system parameters are frequency dependent
 
 \begin{linenomath*}
 \begin{equation}
-G_E(\omega) = A(\omega)E_x(\omega) + B(\omega)Ey(\omega)
+G_E(\omega) = A(\omega)E_x(\omega) + B(\omega)E_y(\omega)
 \label{model2}
 \tag{2a}
 \end{equation}
@@ -142,7 +142,7 @@ In this model, the transfer function components $Z_x$ and $Z_y$ are determined d
 
 The parameters in Model 2 and 4 can be computed using either a time or frequency domain method. In the time domain method, fixed values of the upper ($N_c$) and lower ($N_c$) limits are selected in the summations in Equation~\ref{model2b} (and equivalent for Equation 4) and then the equation is repeated for at least ($N_c+N_a+1$) time values and then the resulting over-determined set of equations is inverted to find the unknowns $a(\tau)$ and $b(\tau)$ for $N_a \le \tau \le Nc$.
 
-In the frequency domain method, estimates of $A(\omega)$ and $B(\omega)$ are made at evaluation frequencies, $\omega_e$, by performing a least squares regression using Equation~\ref{model2} and a set $G_E(\omega)$ and $\mathbf{E}(\omega)$ values near $\omega_e$. To convert the frequency domain transfer functions $A(\omega)$ and $B(\omega)$ estimated at the frequencies $\omega_e$ to impulse responses $a(\tau)$ and $b(\tau)$, they are first linearly interpolated onto a 1 Hz frequency grid and then inverse fourier transformed. The transfer function magnitudes $|A(\omega)|$ and $|B(\omega)|$ were calculated by linear interpolation of the transfer function magnitudes (instead of linearly interpolating the real and imaginary components and then computing the magnitude). The same approach is used for solving for the transfer function $\mathbf{Z}$ in $\mathbf{E}(\omega) = \mathbf{Z}(\omega)\mathbf{B}(\omega)$ - the $xx$ and $yx$ components of $\mathbf{Z}$ are solved for using measured values of $E_x$, $B_x$, and $B_y$ in $E_x = Z_{xx}B_x + Z_{yx}B_{y}$, and the $yx$ and $yy$ components of $\mathbf{Z}$ are solved for using measured values of $E_y$, $B_x$, and $B_y$ in $E_y = Z_{yx}B_x + Z_{yy}B_y$. Additional details on the method are given in \citep[and references therein.][]{Weigel2017}.
+In the frequency domain method, estimates of $A(\omega)$ and $B(\omega)$ are made at evaluation frequencies, $\omega_e$, by performing a least squares regression using Equation~\ref{model2} and a set $G_E(\omega)$ and $\mathbf{E}(\omega)$ values near $\omega_e$. To convert the frequency domain transfer functions $A(\omega)$ and $B(\omega)$ estimated at the frequencies $\omega_e$ to impulse responses $a(\tau)$ and $b(\tau)$, they are first linearly interpolated onto a 1 Hz frequency grid and then inverse fourier transformed. The transfer function magnitudes $|A(\omega)|$ and $|B(\omega)|$ were calculated by linear interpolation of the transfer function magnitudes (instead of linearly interpolating the real and imaginary components and then computing the magnitude). The same approach is used for solving for the transfer function $\mathbf{Z}$ in $\mathbf{E}(\omega) = \mathbf{Z}(\omega)\mathbf{B}(\omega)$ - the $xx$ and $yx$ components of $\mathbf{Z}$ are solved for using measured values of $E_x$, $B_x$, and $B_y$ in $E_x = Z_{xx}B_x + Z_{yx}B_{y}$, and the $yx$ and $yy$ components of $\mathbf{Z}$ are solved for using measured values of $E_y$, $B_x$, and $B_y$ in $E_y = Z_{yx}B_x + Z_{yy}B_y$. Additional details on the method are given in \cite[][and references therein.]{Weigel2017}.
 
 It is expected that the time and frequency domain methods should give similar results because the transfer functions in the time- and frequency-domains are mathematically related \citep{Schoukens2004,Ljung2007}, although differences may exist as a result of implementation choices or roundoff \citep{Ljung2004}.  For example, regarding implementation, in the time domain method we choose a finite value of $N_c$ and $N_a$ and in the frequency domain method, we choose the set of evaluation frequencies $\omega_e$, an averaging window function, and $\omega$ values (which depend on the length of the time series used to calculate the spectra).
 
@@ -150,11 +150,13 @@ Because the frequency domain computations are significantly faster, the results 
 
 The frequency domain computations were performed on all possible unique 1-day window segments of available data, which, for Models 1, 2, and 4 resulted in 36 transfer functions as a function of the evaluation frequencies. The average transfer function magnitude was obtained by averaging the 36 transfer function magnitudes; the average transfer function phase was obtained using the average real and imaginary components, respectively, of the 36 transfer functions. The average impulse response functions were obtained by averaging the 36 impulse response functions.
 
-There are many statistical methods that have been proposed to estimate transfer functions in the magnetotelluric literature that were developed to, for example, address leakage, data spikes and shifts, time intervals in which Equation~\ref{model2} is a poor model, bias, and the fact that errors in the fits of the transfer function at each evaluation frequency may not be Gaussian distributed [REFS]. Several of these methods were used to compute $A(\omega)$ and $B(\omega)$ including tapering the signals in the time domain using a Parzen and Slepian window (instead of box-car), robust regression (with either bi-square and Huber weighting) instead of linear regression, using weighted averages of the 36 1-day segments with the weighting at each frequency equal to the in-sample coherence at that frequency, and averaging the 36 time- or frequency-domain transfer functions using the Huber M estimate with a psi-function \citep{Huber2011}. All results were consistent in the sense that the transfer function values were within or near within each other's error bars. To simplify reproducibility, the method used was the most basic one which gave statistically similar results as methods that required additional or more complex calculations.
+There are many statistical methods that have been proposed to estimate transfer functions in the magnetotelluric literature that require additional steps, processing, and assumptions \citep{Egbert1986,Chave1987,Chave1989,Jones1989,Larsen1996,Egbert1997,Eisel2001,Chave2004,Chave2012,Chave2017} beyond the ones used that follow the basic method in \cite{Simpson2005}. The additional steps and processing were developed to address leakage, un-removed data spikes and shifts, high levels of noise contamination, time intervals in which the model assumptions are violated, bias, and the fact that errors in the fits of the transfer function at each evaluation frequency may not be Gaussian distributed. These works typically involve the estimation of a robust and low bias transfer function. In the results presented, we did not use a robust statistical method to calculate the transfer function or a bias correction algorithm - our primary interest is comparing the ability of different models to predict the data (in a mean-squared-error sense) rather than estimating low-bias model parameters. As discussed in ~\cite{Weigel2017}, a model developed using robust and bias correction methods will not necessarily be an optimal prediction model.
+
+However, several alternative methods for computing the transfer functions were tested individually by modifying the basic method described above to determine if there was a change in the computed transfer functions and each model's prediction ability. When using these alternative methods, we find that the conclusions made regarding the differences each model's prediction ability do not change, and there are differences in the prediction ability that are within the calculated uncertainty, and the transfer function values do not change significantly at frequencies where the signal to noise ratio is above $\sim$5. The experiments in this regard are discussed in the following section.
 
 \section{Results}
 
-In order to compare models, we have computed the out-of-sample prediction error of each model on a given day by computing the parameters in Models 1, 3, and 4 using the remaining 35 days of data. This process was repeated to create 36 out-of-sample predictions for each model. The 95\% confidence limits in the average prediction efficiencys and correlation coefficients were calculated using a 1000 bootstrap samples of the 36 prediction errors.
+In order to compare models, we have computed the out-of-sample prediction error of each model on a given day by computing the parameters in Models 1, 2, and 4 using the remaining 35 days of data. This process was repeated to create 36 out-of-sample predictions for each model. The 95\% confidence limits in the average prediction efficiencys and correlation coefficients were calculated using a 1000 bootstrap samples of the 36 prediction errors.
 
 \begin{table}
 \caption{}
@@ -173,57 +175,63 @@ Model & PE  \\
 
 The prediction efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is defined as $PE$ = 1 - variance(Prediction Error)/variance(Predicted) and is a measure of the skill of the model relative to the variance in the data that are predicted, and it represents the fraction of the variance in the predicted data that predicted by the model.
 
-Based on the results in Table 1, we conclude that Model 1 is inferior to Model 2 in predicting GIC andhe $PEs$ of Model 3 and 4 are statistically equivalent, and Model 3, which uses magnetic field measurements as in input provides better estimates of GIC than Model 2. The last conclusion may be somewhat unexpected because Model 3 uses parameters from two different models. A proposed explanation is that the electric field measurements contain more noise than the magnetic field measurements.
+Based on the results in Table 1, we conclude that Model 1 is inferior to Model 2 in predicting GIC and the $PEs$ of Model 3 and 4 are statistically equivalent. Model 3, which uses magnetic field measurements as in input provides better estimates of GIC than Model 2. The last conclusion may be somewhat unexpected because Model 3 uses parameters from two different models. A proposed explanation is that the electric field measurements contain more noise than the magnetic field measurements.
 
 The average parameters for Model 1 are $a_o =$ $71.9 \pm 27.8$ A/(V/km) and $b_o =$ $-70.0 \pm 65.8$ A/(V/km) and the distribution of the 36 parameters calculated using each 1-day interval is shown in Figure 2. The wide distribution and large error bars are suggestive that the model is a poor representation of the measurements. However, the model does have a good prediction performance - the PE is 0.35 and the data/model correlation coefficient of 0.68. In a similar way that $|\mathbf{B}(t)|$ or $d|\mathbf{B}(t)|/dt$ are often good predictors of $GIC(t)$ [REFS] despite the fact that physically $\mathbf{E}$ drives $GIC$ and $\mathbf{E}$ is related to $\mathbf{B}$ through a frequency dependent transfer function, Model 1 is a fair predictor of GIC, but is a poor approximation relative to Models 2 and 3.
 
-The average parameters for Models 2 and 4 are shown in Figure 3. The error bars at each frequency or time is the standard error of the 36 values used to compute the average. Figure 3a shows that the timescale of variations to impulse in E for Model 2 and B for Model 4 are similar.
+The average parameters for Models 2 and 4 are shown in Figure~\ref{H}--\ref{Phi}. The error bars at each frequency or time is the standard error of the 36 values used to compute the average. Figure \ref{H} shows that the timescale of variations to impulse in $\mathbf{E}$ for Model 2 and $\mathbf{B}$ for Model 4 are similar.
 
-Figure 3b shows that the frequency domain transfer functions for Model 2 vary by an order of magnitude on timescales of 60 seconds to 12 hours (that for Model 1 is constant by definition).
+Figure~\ref{Z} shows that the frequency domain transfer functions for Model 2 vary by an order of magnitude on timescales of 60 seconds to 12 hours (that for Model 1 is constant by definition).
 
-Figure 3c shows the transfer function phases. By definition, that for Model 1 is zero.
+Figure~\ref{Phi} shows the transfer function phases. By definition, that for Model 1 is zero.
+
+Several of these methods were tested individually by modifying the method described above to determine their impact on the computed transfer functions and their over all results. 
+
+\begin{itemize}
+\item Using robust regression (with either bi-square or Huber weighting) instead of linear regression when computing the transfer function estimates at each $\omega_e$
+
+\item Averaging the 36 transfer functions using the Huber M-estimator with a psi-function \citep{Huber2011}. 
+
+\item Using weighted averages of the 36 transfer functions with the weighting at each frequency equal to the in-sample coherence at that frequency
+
+\item Windowing the signals in the frequency domain using a rectangular window (instead of Parzen)
+\end{itemize}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/plot_TF_aves_aobo_histograms-none-none-rectangular-parzen-ols_on_Z.pdf}
-\caption{}
+\caption{Distribution of parameters in Model 1. Each set of parameters were computed 36 times using one day of 1-second cadence data. The dots indicate the average of each histogram: $a_o$ = 71.9 A/(V/km) and $b_o$ = -70.0 A/(V/km).}
 \label{histogram}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/plot_TF_aves_GE_H-none-none-rectangular-parzen-ols_on_Z.pdf}
-\caption{}
+\caption{Impulse responses for Models 1, 2, and 4. The circles at $t = 0$ correspond to the impulse response for Model 1; the red/blue lines are the impulse responses for Model 2 and 4. The values of $a_o$ and $b_o$ have been scaled by a factor of 10 for readability.}
 \label{H}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/plot_TF_aves_GE_Z-none-none-rectangular-parzen-ols_on_Z.pdf}
-\caption{}
+\caption{Frequency domain transfer functions for Models 1-3. By definition, the frequency domain transfer functions for $A_o$ and $B_o$ are constant and equal to $a_o$ and $b_o$.}
 \label{Z}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/plot_TF_aves_GE_Phi-none-none-rectangular-parzen-ols_on_Z.pdf}
-\caption{}
+\caption{Frequency domain phase values for Models 1-3. The phase at each frequency for parameter $p$ is arg$(p)$.}
 \label{Phi}
 \end{figure}
 
+\section{Discussion and Conclusions}
+
+
 \acknowledgments
-Magnetic and electric field data made at the Kakioka Magnetic Observatory was obtained from the Japan Meteorological Agency data portal \url{http://www.kakioka-jma.go.jp/obsdata/metadata/en}.
+Magnetic and electric field data made at the Kakioka Magnetic Observatory was obtained from the Japan Meteorological Agency data portal \url{http://www.kakioka-jma.go.jp/obsdata/metadata/en}. GIC data provided by ...
 
-%% ------------------------------------------------------------------------ %%
-%% References and Citations
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BibTeX is preferred:
-%
 \bibliography{paper.bib}
-%
-% no need to specify bibliographystyle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
