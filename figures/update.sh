@@ -1,6 +1,6 @@
 git pull
 
-cp ../../figures/20060805/plot_model_predictions-MeanModel-20060806T150000.pdf .
+cp ../../figures/predictions/plot_model_predictions-MeanModel-2006-08-06.pdf .
 
 DIR=../../figures/combined
 cp $DIR/plot_model_summary_aobo_histograms-options-1.pdf .
