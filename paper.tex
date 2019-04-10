@@ -152,7 +152,7 @@ Several modifications to this basic procedure were considered. Robust regression
 
 \section{Results}
 
-The out-of-sample prediction metrics for each model on day $D$ were determined by computing the average model parameters using the remaining 34 days of data and then using these averaged parameters to generate a prediction time series and associated metrics on day $D$. This process was repeated to create a set of 35 out-of-sample prediction metrics for each model. In calculating the metrics, the first and last 10 minutes of the day were excluded to reduce the effect of transients that exist in the prediction at the start of the interval for the amount of time that the causal part of the impulse response is non-zero and at the end for the amount of time that the acausal part of the impulse response is non-zero. 
+The out-of-sample prediction metrics for each model on day $D$ were determined by computing the average model parameters using the remaining 34 days of data and then using these averaged parameters to generate a prediction time series and associated metrics on day $D$. This process was repeated to create a set of 35 out-of-sample prediction metrics for each model. In calculating the metrics, the first and last 10 minutes of the day were excluded to reduce the influence of transients that exist in the prediction at the start of the interval for the amount of time that the causal part of the impulse response is non-zero and at the end for the amount of time that the acausal part of the impulse response is non-zero. 
 
 The performance of each model in predicting GIC was assessed using three metrics: the prediction efficiency, PE, the mean-squared-error (MSE) ratio, and the signal-to-noise ratio.
 
@@ -175,7 +175,7 @@ $m$\hspace{1em} Model & PE & 95\% CI & MSE$_m$/MSE$_1$ & 95\% CI\\
 \end{tabular}
 \end{table}
 
-Figure~\ref{predictions} shows the predictions for each model in a 1-day interval selected because the value of the prediction efficiency for each model was in the same order as that shown in Table~1, i.e., Model 1 has the lowest PE and Model 4 has the highest.
+Figure~\ref{predictions} shows the predictions for each model in a 1-day interval selected because the value of the prediction efficiency for each model was in the same order as that shown in Table~1, i.e., Model 1 has the lowest PE and Model 4 has the highest. Note that the large errors visible at the start and end of the time intervals are due to the transients discussed above and the first and last 10~minutes of each interval were omitted from metrics calculations.
 
 The primary conclusions of this work follow from the results shown in Table~1: the frequency dependent model, Model~2, is significantly better at predicting GIC than the frequency independent model, Model~1; Model~3, which uses an estimate of the electric field based on magnetic field measurements, provides significantly better estimates of GIC than Model~2; Model~4, in which a transfer function that connects GIC to $\mathbf{B}$ was derived directly from the data, provides better estimates of GIC than Model~3.
 
@@ -202,6 +202,12 @@ The average parameters for Models~2 and~4 are shown in Figure~\ref{H}--\ref{Phi}
 Figure~\ref{Z} shows that the frequency domain transfer functions for Model~2 vary by an order of magnitude on timescales of 60~s to 12~h (that for Model~1 is constant by definition). For this system, GIC more sensitive to $E_y$ than $E_x$ due to $b(\omega) > a(\omega)$, but note that $E_y(t)$ has less variability than $E_x(t)$ - the variance in $E_x(t)$ is $\sim$5x larger than $E_y(t)$ over the entire dataset (this is also visible in Figure~\ref{sample}). The ratio of $|\overline{b}_o|/|\overline{a}_o|$ is approximately 1 for Model~1 and this can be compared with $|b(\omega)|/|a(\omega)|$ calculated using the lines for $|a(\omega)|$ and $|b(\omega)|$ shown in Figure~\ref{Z}. The ratio varies from 2.7 at $T=30$~s to 1.6 at $T=12$~h. At $T=12$~h, the highest period considered, the phases of $a(\omega)$ and $b(\omega)$ shown in Figure~\ref{Phi} differ by 180 degrees and the signs are consistent with $\overline{a}_o$ and $\overline{b}_o$. 
 
 Figure~\ref{Phi} shows the transfer function phases (that for Model~1 is 0$^o$ for positive parameters and 180$^o$ for negative parameters by definition). The phases for $z_x(\omega)$ and $b(\omega)$ are offset by 120$^o$ while the phases for $a(\omega)$ and $b(\omega)$ are significantly different.
+
+Figure~\ref{Z_MT} and~\ref{Phi_MT} show the parameters for $\mathbf{Z}$ in Model~3. Note that electric and magnetic field data from Memambetsu, Japan were also used by \cite{Fujii2015} to compute $\mathbf{Z}$ (obtained from the IRIS DMC EMTF database \cite{Kelbert2011}). When using the \cite{Fujii2015} transfer function for Model~3, the PE was significantly lower (0.58 vs 0.78). 
+
+%A preliminary investigation suggests that the cause is due to several factors: we have found using continuous one-month intervals prior to 2006 to compute $\mathbf{Z}$, our calculated transfer function (using all of the modifications described in Section~3) matches the \cite{Fujii2015} transfer function to within $\pm X$\% except at low periods, which is likely due to the fact that we did not use a remote reference. After 2006, our calculated transfer functions differ significantly. In addition, we have found that the calculated transfer function is highly sensitive to whether or not stacking was used. Due to the large gaps between and the varying length of data segments, transfer functions were computed using one day of data and then averaged. We have found that if a continuous set of measurements over approximately 21 days is used to compute a single transfer function, the result is significantly different than if 21 transfer functions were computed and then averaged. 
+
+%As a result, the transfer function parameters shown in Figure~\ref{Z_MT} and~\ref{phi_MT} should be considered a 
 
 %\cite{Pulkkinen2010} noted that one could estimate the ratio of $a_o/b_o$ using GIC and local geomagnetic field measurements even if $\mathbf{Z}(\omega)$ was unknown if one assumed the ground conductivity was 1-D so that $Z\equiv Z_{xy}=-Z_{yx}$ and $Z_{xx}=Z_{yy}=0$ so that Equation~\ref{model2} can be written
 
@@ -308,7 +314,7 @@ Magnetic and electric field data made at the Kakioka Magnetic Observatory was ob
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{figures/plot_model_summary_aobo_histograms-options-1.pdf}
-\caption{Distribution of parameters in Model 1. Each set of parameters was computed 35 times using one day of 1-second cadence data. The circle/dot on the horizontal axis indicates the average of each histogram: $a_o$ = 73 A/(V/km) and $b_o$ = -72.0 A/(V/km).}
+\caption{Distribution of parameters in Model 1. Each set of parameters was computed 35 times using one day of 1-second cadence data. The circle/dot on the horizontal axis indicates the average of each histogram: $a_o$ = 73 A/(V/km) and $b_o$ = -72 A/(V/km).}
 \label{histogram}
 \end{figure}
 
