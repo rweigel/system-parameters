@@ -36,7 +36,7 @@ A common assumption used when estimating geomagnetically induced currents (GICs)
 
 \section{Introduction}
 
-Geomagnetically induced currents (GICs) are electric currents in conducting systems that are due to electric fields near the Earth's surface. Time-varying electric and magnetic fields at Earth's surface are driven by time variations in ionospheric currents on time scales of minutes to hours \citep{Ohtani2000} and the movement of Earth's surface relative to slow-varying current systems in Earth's ionosphere that are near stationary relative to the Sun \citep{Stening2013}. Of particular interest are currents induced in electric power systems because they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012,Gaunt2014}. Accurate estimation of GIC magnitudes is important for power system design, retrospective analysis, and mitigation of the impacts of space weather on power systems \citep{Molinski2002,Thomson2010,NERC2012,Gaunt2014}. 
+Geomagnetically induced currents (GICs) are electric currents in conducting systems that are due to electric fields near the Earth's surface. Time-varying electric and magnetic fields at Earth's surface are driven by time variations in ionospheric currents on time scales of seconds to hours \citep{Ohtani2000} and the movement of Earth's surface relative to slow-varying current systems in Earth's ionosphere that are near stationary relative to the Sun \citep{Stening2013}. Of particular interest are currents induced in electric power systems because they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012,Gaunt2014}. Accurate estimation of GIC magnitudes is important for power system design, retrospective analysis, and mitigation of the impacts of space weather on power systems \citep{Molinski2002,Thomson2010,NERC2012,Gaunt2014}. 
 
 A common assumption made in estimates of GIC in an electric power system using either a measured or estimated time series of the horizontal geoelectric field at Earth's surface, $\mathbf{E}(t)$, is that the power system is resistive or quasi-DC in the sense that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}. In this case, estimates of the coefficients $a_o$ and $b_o$ can be easily made from the data using linear regression when contemporaneous measurements of $GIC(t)$ and $\mathbf{E}(t)$ are available, or by using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods \citep[e.g.,][]{Boteler2014a,Boteler2014b,Boteler2017}. This quasi-DC assumption has been used or stated in many GIC-related works, for example, \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Horton2012,Viljanen2012,Overbye2012,Marshall2013,Liu2014,Zheng2014,Watari2015}.
 
@@ -45,28 +45,6 @@ In this work, we use a unique dataset in which time series measurements of $\mat
 \section{Data}
 
 The 1-second-cadence GIC data used span a total of 35 days across 10 intervals that start and end at midnight Japan Standard Time (JST) and are listed in Table~\ref{intervals}. These data have been presented previously in \citet{Watari2009} and \cite{Watari2015}. These time intervals are those for which GIC data was made available with the exception of three days for which there were obvious problems with either the electric field or GIC measurements. The GIC dataset includes 1~s raw data and 1~Hz low-pass-filtered raw measurements. The results presented here are for the 1~Hz low-pass-filtered GIC measurements
-
-\begin{table}
-\caption{Date intervals used for analysis}
-\centering
-\begin{tabular}{l l}
-\hline
-Start Date & End Date\\
-\hline
-2006-04-03 & 2006-04-10\\
-2006-07-25 & 2006-07-29\\
-2006-08-05 & 2006-08-08\\
-2006-08-19 & 2006-08-21\\
-2006-11-07 & 2006-11-12\\
-2006-11-28 & 2006-11-29\\
-2006-12-01 & 2006-12-14\\
-2006-12-15 & 2006-12-15\\
-2007-11-18 & 2007-11-20\\
-2007-11-22 & 2007-11-22\\
-\hline
-\end{tabular}
-\label{intervals}
-\end{table}
 
 One-second-cadence electric and magnetic field measurements from Memambetsu Magnetic Observatory were obtained from the Japan Meteorological Agency data portal.
 
@@ -131,7 +109,7 @@ G_B(\omega) = z_x(\omega)B_x(\omega) + z_y(\omega)B_y(\omega)\,.
 \noindent
 In this model, the transfer function components $z_x$ and $z_y$ are determined directly from measurements of $GIC(t)$ and $\mathbf{B}(t)$ and no electric field measurements are used; this model is expected to produce estimates of GIC that are similar to that obtained from Model~3 because they both use the same input variable.
 
-Estimates of $a(\omega)$ and $b(\omega)$ are made at evaluation frequencies, $\omega_e \equiv 2\pi f_e$, by performing a ordinary least squares regression (OLS) using Equation~\ref{model2} and a set $G_E(\omega)$ and $\mathbf{E}(\omega)$ in a band of frequencies around $f_e$ from the DFT (discrete Fourier transform) of 24 hours of 1-s cadence data. Following the suggestion of \cite{Simpson2005}, the 28 values of $f_e$ start at $0.25$ Hz and decrease by a factor of $\sqrt{2}$ and end at $1/43200$~Hz; if a $f_e$ value computed in this way is not an integer multiple of $1/86400$, the nearest smaller integer multiple is used. The regression for each $f_e$ uses all DFT frequencies with values in a window with a width of twice the separation from the next lower value of $f_e$ and the given $f_e$ with the exceptions that the lowest evaluation window has a lower bound of $1/86400$~Hz and highest evaluation window has an upper bound of $0.5$~Hz. 
+Estimates of $a(\omega)$ and $b(\omega)$ are made at evaluation frequencies, $\omega_e \equiv 2\pi f_e$, by performing a ordinary least squares regression (OLS) using Equation~\ref{model2} and a set $G_E(\omega)$ and $\mathbf{E}(\omega)$ in a band of frequencies around $f_e$ from the DFT (discrete Fourier transform) of 24 hours of 1-s cadence data. Following the suggestion of \cite{Simpson2005}, the 28 values of $f_e$ start at $0.25$ Hz and decrease by a factor of approximately $\sqrt{2}$ and end at $1/43200$~Hz; if a $f_e$ value computed in this way is not an integer multiple of $1/86400$, the nearest smaller integer multiple is used. The periods associated with the evaluation frequencies are listed in Table~\ref{evaluationperiods}. The regression for each $f_e$ uses all DFT frequencies with values in a window with a width of twice the separation from the next lower value of $f_e$ and the given $f_e$ with the exceptions that the lowest evaluation frequency window has a lower bound of $1/86400$~Hz and highest evaluation frequency window has an upper bound of $0.375$~Hz. 
 
 The same approach is used for solving for $z_x$ and $z_y$ in Equation~\ref{model4}. For the transfer function $\boldsymbol{Z}$ in $\mathbf{E}(\omega) = \boldsymbol{Z}(\omega)\mathbf{B}(\omega)$ used in Model~3, the $xx$ and $xy$ components of $\boldsymbol{Z}$ are solved for using 
 
@@ -164,11 +142,23 @@ Out-of-sample estimation metrics for each model on day $D$ were determined by co
 
 The performance of each model in estimating GIC was assessed using three metrics: the prediction efficiency, PE, the mean-squared-error (MSE) ratio, and the signal-to-noise ratio. The PE and MSE ratios are shown in Table~\ref{results}.
 
-The prediction efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is defined as PE = 1 - variance(Prediction Error)/variance(Predicted); it is a measure of the skill of the model relative to the variance in the data that are predicted and it represents the fraction of the variance in the data that is predicted by the model.
+The mean-squared-error on day $D$ is
+\begin{equation*}
+\mbox{MSE}_m = \frac{1}{N}\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2 \,,
+\end{equation*}
+\noindent
+where $GIC_m(t)$ is the model prediction of model $m$ given in Table~\ref{results} at time step $t$, $t_o=600$, and $t_f=85800$, so that sum is over one day of one-second-cadence measurements excluding the first and last 10~minutes.
 
-The average PE and MSE ratios were computed by averaging the out-of-sample PE and MSE ratios. The 95\% confidence interval, CI, on the PE and MSE ratio was calculated using 1000 bootstrap samples of the out-of-sample prediction metrics. (The typical difference between the limits when the confidence intervals were computed assuming the values were Gaussian-distributed was $\sim$2\%.) 
+The prediction efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is calculated for day $D$ using 
+\begin{equation*}
+\mbox{PE}_m = 1 - \frac{\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2}{\sum_{t=t_o}^{t_f} \big(GIC(t)-\overline{GIC(t)}\big)^2}\,,
+\end{equation*}
+\noindent
+where $\overline{GIC(t)}$ is an average over the same time interval. PE is a measure of the skill of the model relative to the variance in the data that are predicted and it represents the fraction of the variance in the data that is predicted by the model.
 
-The average signal-to-noise ratio at a given frequency is the average of the out-of-sample signal-to-noise ratios at that frequency. The spectra for the signal and prediction error used in the signal-to-noise ratio calculation were obtained by averaging the raw spectra in the same frequency windows used for the regression. 
+The average PE and the MSE ratios were computed by averaging the out-of-sample PEs and MSE ratios. The 95\% confidence interval, CI, on the PE and MSE ratio was calculated using the bootstrap method \citep{Zoubir1998}: 1000 samples of the out-of-sample prediction metrics were used to compute the CIs. (The typical difference between the limits when the confidence intervals were computed assuming the values were Gaussian-distributed was $\sim$2\%.) 
+
+The signal-to-noise ratio on day $D$ at a given evaluation frequency is the ratio of of the smoothed power spectrum value of $GIC$ to the smoothed power spectrum value of the prediction error at that evaluation frequency. The smoothed spectrum was obtained by averaging the raw spectrum in the same frequency windows used for the regression. The average signal-to-noise ratio at a given evaluation frequency is the average of the 35 out-of-sample signal-to-noise ratios at that frequency.
 
 \begin{table}
 \caption{Out-of-sample model performance metrics for models $m=1-4$. MSE$_1$/MSE$_m$ is the ratio of the MSE for Model~1 to that of Model $m$. The PE and MSE ratios are the average of 35 values and the confidence interval, CI, was determined from 1000 bootstrap samples.}
@@ -188,12 +178,11 @@ $m$\hspace{1em} Model & PE & 95\% CI & MSE$_1$/MSE$_m$ & 95\% CI\\
 
 Figure~\ref{predictions} shows the predictions for each model in a 1-day interval selected because the value of the prediction efficiency for each model was in the same order as that shown in Table~\ref{results}, i.e., Model~1 has the lowest PE and Model~4 has the highest. Note that the large errors visible at the start and end of the time intervals are due to the transients discussed above and the first and last 10~minutes of each interval were omitted from metrics calculations.
 
-The primary conclusions of this work follow from the results shown in Table~~\ref{results}: the frequency dependent model, Model~2, is significantly better at predicting GIC than the frequency independent model, Model~1; Model~3, which uses an estimate of the electric field based on magnetic field measurements, provides significantly better estimates of GIC than Model~2; Model~4, in which a transfer function that connects GIC to $\mathbf{B}$ was derived directly from the data, provides better estimates of GIC than Model~3.
+The primary conclusions of this work follow from the results shown in Table~\ref{results}: the frequency dependent model, Model~2, is significantly better at predicting GIC than the frequency independent model, Model~1; Model~3, which uses an estimate of the electric field based on magnetic field measurements, provides significantly better estimates of GIC than Model~2; Model~4, in which a transfer function that connects GIC to $\mathbf{B}$ was derived directly from the data, provides better estimates of GIC than Model~3.
 
 To determine the statistical significance of the differences, $10^5$ bootstrap averages of the segment PEs of each model were created and their differences were computed. From this, the null hypothesis that the PE of Model~2 is equal to that of Model~1 can be rejected at a significance level of less than $10^{-5}$ because no bootstrap average PE difference from Model~2 was found to be lower than that for Model~1. The null hypothesis that the PE of Model~3 is equal to that of Model~2 can also be rejected at the same significance level. The null hypothesis that the PE of Model~4 is equal to that of Model~3 can be rejected at a significance level of $10^{-2}$.
 
-Figure~\ref{SN} shows the average signal-to-noise (i.e., signal to prediction error) ratios as a function of period for the four models. At each evaluation frequency, the SN ratio is the ratio of the average of the out-of-sample SN ratios of the segments and the error bars represent a 95\% CIs based on 1000 bootstrap samples of the segment SN ratios. 
-Consistent with the results in Table~\ref{results}, the SN ratio for Model~1 is lower than that for Models~2-4 at all frequencies. However, ordering of the SN ratio for Models~2-4 is dependent on period. 
+Figure~\ref{SN} shows the average signal-to-noise (i.e., signal to prediction error) ratios as a function of period for the four models. At each evaluation frequency, the SN ratio is the ratio of the average of the out-of-sample SN ratios and the error bars represent a 95\% CIs based on 1000 bootstrap samples of the segment SN ratios. Consistent with the results in Table~\ref{results}, the SN ratio for Model~1 is lower than that for Models~2-4 at all frequencies. However, ordering of the SN ratio for Models~2-4 is dependent on period. 
 
 Below $600$~s (10~min), Model~2 has the largest SN ratio. This result is somewhat visible in the sample interval shown in Figure~\ref{predictions} where the high-frequency fluctuations in the prediction error for Model~2 are the smallest among the models. For these periods, the predictive ability of each model is in the order that may be expected based on the data used to derive the model: Model~2, which uses direct measurements of the electric field, has a higher SN ratio than Model~3, which uses an indirect estimate of the electric field. Model~4 has a slightly higher SN than Model~3, and this is expected because they both use the same input of the magnetic field, but Model~3 has an additional source of uncertainty from the data-estimated coefficients in $\mathbf{Z}$.
 
@@ -207,11 +196,17 @@ The average coefficients for Models~2 and~4 are shown in Figure~\ref{Z}--\ref{Ph
 
 Figure~\ref{Z} shows that the frequency domain transfer functions for Model~2 vary by an order of magnitude on timescales of 60~s to 12~h (that for Model~1 is constant by definition). For this system, GIC is more sensitive to $E_y$ than $E_x$ due to $b(\omega) > a(\omega)$, but note that $E_y(t)$ has less variability than $E_x(t)$ - the variance in $E_x(t)$ is $\sim$5x larger than $E_y(t)$ over the entire dataset (this is also visible in Figure~\ref{sample}). 
 
-The ratio of $|\overline{b}_o|/|\overline{a}_o|$ is approximately 1 for Model~1 and this can be compared with $|b(\omega)|/|a(\omega)|$ calculated using the lines for $|a(\omega)|$ and $|b(\omega)|$ shown in Figure~\ref{Z}. The ratio varies from 2.7 at $T=30$~s to 1.6 at $T=12$~h. At $T=12$~h, the highest period considered, the phases of $a(\omega)$ and $b(\omega)$ shown in Figure~\ref{Phi} differ by 180 degrees and the signs are consistent with those of $\overline{a}_o$ and $\overline{b}_o$. 
+The ratio of $|\overline{b}_o|/|\overline{a}_o|$ is approximately 1 for Model~1 and this can be compared with $|b(\omega)|/|a(\omega)|$ calculated using the lines for $|a(\omega)|$ and $|b(\omega)|$ shown in Figure~\ref{Z}. The ratio varies from 2.7 at $T=30$~s to 1.6 at $T=12$~h. 
 
-Figure~\ref{Phi} shows the transfer function phases (that for Model~1 is 0$^o$ for positive coefficients and 180$^o$ for negative coefficients by definition). The phases for $z_x(\omega)$ and $b(\omega)$ are offset by 120$^o$ while the phases for $a(\omega)$ and $b(\omega)$ are significantly different.
+Figure~\ref{Phi} shows the transfer function phases (that for Model~1 is 0$^o$ for positive coefficients and 180$^o$ for negative coefficients by definition). The phases for $z_x(\omega)$ and $b(\omega)$ are offset by 120$^o$ while the phases for $a(\omega)$ and $b(\omega)$ are significantly different. At $T=12$~h, the phases of $a(\omega)$ and $b(\omega)$ differ by 180 degrees and the associated signs are consistent with those of $\overline{a}_o$ and $\overline{b}_o$. 
 
-Figure~\ref{Z_MT} and~\ref{Phi_MT} show the coefficients for $\mathbf{Z}$ in Model~3. Note that electric and magnetic field data from Memambetsu, Japan were also used by \cite{Fujii2015} to compute $\mathbf{Z}$. When using the \cite{Fujii2015} transfer function for Model~3, the PE was significantly lower (0.58 vs. 0.78). (The \cite{Fujii2015} transfer function was obtained from the IRIS DMC EMTF database [\cite{Kelbert2011}]). Although not critical to the issues addressed in this work, a preliminary investigation suggests that the cause is due to several factors. We have found that when using continuous one-month intervals prior to 2006 to compute $\mathbf{Z}$, our calculated transfer function matches the \cite{Fujii2015} transfer function to within the error bars except below periods of 100~s, which is likely explained by the issues with the electric field response in the 1-second-cadence measurements discussed in \cite{Fujii2015}. After 2006, our calculated transfer functions differ significantly from that in \cite{Fujii2015} - they are shifted downward by approximately 10-50\%. In addition, we have found that the estimated transfer function is sensitive to whether or not segment averaging was used. Due to the large gaps between and the varying length of continuous segments of data used in this work, transfer function coefficients were computed using one-day segments of data and then averaged. We have found that if a continuous set of measurements over approximately 21 days is used to compute a single transfer function, the transfer function magnitudes are up to 25\% higher than if 21 transfer functions were computed and then averaged. 
+%At $T=12$~h, the phases of $|a(\omega)|$ and $|b(\omega)|$ match that of $|\overline{b}_o|$ and $|\overline{a}_o|$ and the ratio of  $|b(\omega)|/|a(\omega)|$ of 1.6 is the closest it gets to that of $|\overline{b}_o|/|\overline{a}_o|$ of approximately 1. However, the absolute values of $a(\omega)$ and $b(\omega)$ are significantly larger than $a_o$ and $b_o$
+ 
+
+From Figure~\ref{Z} and Figure~\ref{Phi}, it follows that the 
+In Figure~\ref{Phi}, at $T=12$~h, the phase difference between $a(\omega)$ and $b(\omega)$ of 180 degrees is the same as that for $a_o$ and $b_o$. In addition the ratio of $|b(\omega)|/|a(\omega)| =1.6$ is nearest to the frequency independent value predicted by Model~1 of $|\overline{b}_o|/|\overline{a}_o| = 1$.
+
+Figure~\ref{Z_MT} and~\ref{Phi_MT} show the coefficients for $\mathbf{Z}$ in Model~3. Note that electric and magnetic field data from Memambetsu, Japan were also used by \cite{Fujii2015} to compute $\mathbf{Z}$. When using the \cite{Fujii2015} transfer function for Model~3, the PE was significantly lower (0.58 vs. 0.78). (The \cite{Fujii2015} transfer function was obtained from the IRIS DMC EMTF database [\cite{Kelbert2011}]). Although not critical to the issues addressed in this work, a preliminary investigation suggests that the cause is due to several factors. We have found that when using continuous one-month intervals prior to 2006 to compute $\mathbf{Z}$, our calculated transfer function matches the \cite{Fujii2015} transfer function to within the error bars except below periods of 100~s, which is likely explained by the issues with the electric field response in the 1-second-cadence measurements discussed in \cite{Fujii2015}. After 2006, our calculated transfer functions differ significantly from that in \cite{Fujii2015} - they are shifted downward by approximately 10-50\%. In addition, we have found that the estimated transfer function is sensitive to whether or not segment averaging was used. Due to the large gaps between and the varying length of continuous segments of data used in this work, transfer function coefficients were computed using one-day segments of data and then averaged. We have found that if a continuous set of measurements over approximately 21 days is used to compute a single transfer function, the transfer function magnitudes are up to 25\% higher than if 21 transfer functions were computed and then averaged. This result is unexpected, and extensive successful verification tests of our MT calculations along with the fact that this effect has observed by the co-author, who used different MT software on different data sets, suggests the explanation is not due to an error in the code used her to compute transfer functions. We expect to consider this in a future investigation as it suggests that stacking can be a significant source of transfer function bias and note that the most likely explanation involves non-stationarity in the noise.
 
 \section{Discussion}
 
@@ -223,7 +218,7 @@ There are at least three possible explanations a frequency dependence in data-de
 
 (2) A second consideration is that artifacts of the electric field and GIC measurements used in Model~2 cause the observed frequency dependence. However, the GIC instrument (HIOKI 9279 current sensor) is frequency independent to within $\pm 0.2$\% in this period range and the response characteristics of the magnetic and electric field instruments are essentially frequency independent relative to the observed transfer function frequency dependence for periods in the range of $30-10^{5}$~s (Oowada et al. 1998, Fujii 2019 personal communication.)
 
-(3) The equation of Model~1 assumes that the electric field is spatially uniform at all points in the systems. The exact calculation of GICs in a power system under the quasi-DC assumption requires knowledge of the earth potential at the grounding points of the system, and simulations of GIC flow \citep{Albertson1981,Lehtinen1985} typically start with an assumed electric field along the lines to calculate these potential differences. The potential differences are then used along with the DC system component resistances and their connectivity to calculate GIC in the different parts of the system. In both Model~1 and Model~2, the input electric field is assumed to be spatially uniform along the line in which GIC was measured so that the potential difference is directly proportional to the electric field. If it is not, the coefficients derived from the data in both models may differ significantly from those calculated using system configuration and resistance information. However, the data-derived coefficients will not have a frequency dependence that results from a variation in the direction of the electric field along the line.
+(3) The equation of Model~1 assumes that the electric field is spatially uniform at all points in the systems. The exact calculation of GICs in a power system under the quasi-DC assumption requires knowledge of the earth potential at the grounding points of the system, and simulations of GIC flow \citep{Albertson1981,Lehtinen1985} typically start with an assumed electric field along the lines to calculate these potential differences. The potential differences are then used along with the DC system component resistances and their connectivity to calculate GIC in the different parts of the system. In both Model~1 and Model~2, the input electric field is assumed to be spatially uniform along the line in which GIC was measured so that the potential difference is directly proportional to the electric field. Spatial variations in the electric field measured on Earth’s surface can be due to horizontal variations in the incident electric field and horizontal variations in sub-surface conductivity, including those at land-ocean interfaces. If a spatial variation exists along the line in which GIC was measured, the coefficients derived from the data in both models may differ significantly from those calculated using system configuration and resistance information. However, the data-derived coefficients will not have a frequency dependence that results from a variation in the direction of the electric field along the line.
 
 The second assumption of Model~1 is that the spectrum of the electric field is uniform. Violation of this assumption can lead to an apparent violation of the quasi-static approximation. Suppose the electric field and GIC are measured at one end of a long line segment and the electric field is non-zero only at a frequency of $\omega_1$. If the electric field is spectrally uniform along the full line segment, then from the quasi-static approximation it follows that the measured GIC will also only be non-zero at a frequency of $\omega_1$. If the electric field on the far half of the line is non-zero only at a frequency of $\omega_2$, the observed GIC and electric field will appear to be inconsistent with the quasi-static approximation because GIC will have non-zero variations at both $\omega_1$ and $\omega_2$.
 
@@ -317,6 +312,75 @@ Magnetic and electric field measurements made at the Kakioka Magnetic Observator
 \caption{Frequency domain phase values for the coefficients in Model~3.}
 \label{Phi_MT}
 \end{figure}
+
+\clearpage
+
+\section{Appendix}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+
+\begin{table}[h]
+\caption{Date intervals used for analysis}
+\centering
+\begin{tabular}{l l}
+\hline
+Start Date & End Date\\
+\hline
+2006-04-03 & 2006-04-10\\
+2006-07-25 & 2006-07-29\\
+2006-08-05 & 2006-08-08\\
+2006-08-19 & 2006-08-21\\
+2006-11-07 & 2006-11-12\\
+2006-11-28 & 2006-11-29\\
+2006-12-01 & 2006-12-14\\
+2006-12-15 & 2006-12-15\\
+2007-11-18 & 2007-11-20\\
+2007-11-22 & 2007-11-22\\
+\hline
+\end{tabular}
+\label{intervals}
+\end{table}
+
+\begin{table}
+\caption{Periods associated with evaluation frequency windows used for regression and smoothing spectra. \# is the evaluation frequency number, $N$ is the number of DFT points in the window, and $T_e=1/f_e$. The window range is $T_l$ through $T_h$.}
+\centering
+\begin{tabular}{l l l l l}
+\hline \\
+\# & $N$ & $T_e$ [s] & $T_l$ [s] & $T_h$ [s] \\
+\hline \\
+1 & 2 & 43200 & 28800 & 86400 \\
+2 & 2 & 28800 & 21600 & 43200 \\
+3 & 3 & 21600 & 14400 & 43200 \\
+4 & 4 & 14400 & 9600 & 28800 \\
+5 & 5 & 10800 & 7200 & 21600 \\
+6 & 6 & 7854.5 & 5400 & 14400 \\
+7 & 8 & 5760 & 3927.3 & 10800 \\
+8 & 12 & 3927.3 & 2618.2 & 7854.5 \\
+9 & 16 & 2880 & 1920 & 5760 \\
+10 & 22 & 2009.3 & 1350 & 3927.3 \\
+11 & 31 & 1440 & 960 & 2880 \\
+12 & 43 & 1016.5 & 680.3 & 2009.3 \\
+13 & 61 & 720 & 480 & 1440 \\
+14 & 85 & 511.2 & 341.5 & 1016.5 \\
+15 & 120 & 361.5 & 241.3 & 720 \\
+16 & 170 & 255.6 & 170.4 & 511.2 \\
+17 & 240 & 180.8 & 120.5 & 361.5 \\
+18 & 338 & 128 & 85.4 & 255.6 \\
+19 & 478 & 90.5 & 60.3 & 180.8 \\
+20 & 676 & 64 & 42.7 & 128 \\
+21 & 956 & 45.2 & 30.2 & 90.5 \\
+22 & 1351 & 32 & 21.3 & 64 \\
+23 & 1910 & 22.6 & 15.1 & 45.2 \\
+24 & 2701 & 16 & 10.7 & 32 \\
+25 & 3819 & 11.3 & 7.5 & 22.6 \\
+26 & 5401 & 8 & 5.3 & 16 \\
+27 & 7638 & 5.7 & 3.8 & 11.3 \\
+28 & 10801 & 4 & 2.7 & 8 \\
+\hline \\
+\end{tabular}
+\label{evaluationperiods}
+\end{table}
 
 \clearpage
 
