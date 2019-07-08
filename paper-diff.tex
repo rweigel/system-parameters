@@ -1,7 +1,7 @@
 \documentclass[draft,linenumbers]{agujournal2018}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL paper-submitted-1.tex   Wed Jun 26 12:33:31 2019
-%DIF ADD paper.tex               Tue Jul  2 11:37:12 2019
+%DIF DEL paper-submitted-1.tex   Thu Jun 27 16:14:26 2019
+%DIF ADD paper.tex               Mon Jul  8 13:21:05 2019
 \usepackage{apacite}
 %DIF 3c3
 %DIF < \usepackage{url} %this package should fix any errors with URLs in refs.
@@ -107,13 +107,8 @@ A common assumption used when estimating geomagnetically induced currents (GICs)
 
 Geomagnetically induced currents (GICs) are electric currents in conducting systems that are due to electric fields near the Earth's surface. Time-varying electric and magnetic fields at Earth's surface are driven by time variations in ionospheric currents on time scales \DIFdelbegin \DIFdel{on the order of }\DIFdelend \DIFaddbegin \DIFadd{of seconds to }\DIFaddend hours \citep{Ohtani2000} and the movement of Earth's surface relative to slow-varying current systems in Earth's ionosphere that are near stationary relative to the Sun \citep{Stening2013}. Of particular interest are currents induced in electric power systems because they can lead to system degradation, disruption, and failure \citep{Albertson1993,NERC2012,Gaunt2014}. Accurate estimation of GIC magnitudes is important for power system design, retrospective analysis, and mitigation of the impacts of space weather on power systems \citep{Molinski2002,Thomson2010,NERC2012,Gaunt2014}. 
 
-A common assumption made in estimates of GIC in an electric power system using either a measured or estimated time series of the horizontal geoelectric field at Earth's surface, $\mathbf{E}(t)$, is that the power system is resistive or quasi-DC in the sense that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}. In this case, estimates of the coefficients $a_o$ and $b_o$ can be easily made from the data using linear regression when contemporaneous measurements of $GIC(t)$ and $\mathbf{E}(t)$ are available, or by using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods \citep[e.g.,][]{Boteler2014a,Boteler2014b,Boteler2017}. This quasi-DC assumption has been used or stated in many GIC-related works, for example, \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
-\citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Horton2012,Viljanen2012,Overbye2012,Marshall2013,Liu2014,Zheng2014,Watari2015,Bonner2017}
-}%DIFAUXCMD
-}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
-\citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Horton2012,Viljanen2012,Overbye2012,Marshall2013,Liu2014,Zheng2014,Watari2015}
-}%DIFAUXCMD
-}\DIFaddend .
+A common assumption made in estimates of GIC in an electric power system using either a measured or estimated time series of the horizontal geoelectric field at Earth's surface, $\mathbf{E}(t)$, is that the power system is resistive or quasi-DC in the sense that the relationship $GIC(t) = a_oE_x(t) + b_oE_y(t)$ holds \citep{Albertson1981,Lehtinen1985}. In this case, estimates of the coefficients $a_o$ and $b_o$ can be easily made from the data using linear regression when contemporaneous measurements of $GIC(t)$ and $\mathbf{E}(t)$ are available, or by using information about the connectivity of the power lines and values of the conductor and transformer resistances using DC circuit methods \citep[e.g.,][]{Boteler2014a,Boteler2014b,Boteler2017}. This quasi-DC assumption has been used or stated in many GIC-related works, for example, \DIFdelbegin %DIFDELCMD < \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Horton2012,Viljanen2012,Overbye2012,Marshall2013,Liu2014,Zheng2014,Watari2015,Bonner2017}%%%
+\DIFdelend \DIFaddbegin \citet{Pulkkinen2007,Wik2008,Pulkkinen2010,Ngwira2011,Horton2012,Viljanen2012,Overbye2012,Marshall2013,Liu2014,Zheng2014,Watari2015}\DIFaddend .
 
 %DIF < \cite{Oyedokun2013a} developed a method to account for the finite inductive response time of transformers by taking the GIC predicted based on the quasi-DC assumption and then applying a piecewise-linear L/R filter derived from bench-scale transformer measurements, with a time constant dependent on load, to obtain an alternative estimate of GIC. 
 \DIFdelbegin %DIFDELCMD < 
@@ -133,48 +128,48 @@ The 1-second-cadence GIC data used span a total of 35 days across 10 intervals t
 %DIFDELCMD < %%%
 %DIFDELCMD < \caption{%
 {%DIFAUXCMD
-\DIFdel{Date intervals used for analysis}}
+\DIFdelFL{Date intervals used for analysis}}
 %DIFAUXCMD
 %DIFDELCMD < \centering
 %DIFDELCMD < \begin{tabular}{l l}
 %DIFDELCMD < \hline
 %DIFDELCMD < %%%
-\DIFdel{Start Date }%DIFDELCMD < & %%%
-\DIFdel{End Date}%DIFDELCMD < \\
+\DIFdelFL{Start Date }%DIFDELCMD < & %%%
+\DIFdelFL{End Date}%DIFDELCMD < \\
 %DIFDELCMD < \hline
 %DIFDELCMD < %%%
-\DIFdel{2006-04-03 }%DIFDELCMD < & %%%
-\DIFdel{2006-04-10}%DIFDELCMD < \\
+\DIFdelFL{2006-04-03 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-04-10}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-07-25 }%DIFDELCMD < & %%%
-\DIFdel{2006-07-29}%DIFDELCMD < \\
+\DIFdelFL{2006-07-25 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-07-29}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-08-05 }%DIFDELCMD < & %%%
-\DIFdel{2006-08-08}%DIFDELCMD < \\
+\DIFdelFL{2006-08-05 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-08-08}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-08-19 }%DIFDELCMD < & %%%
-\DIFdel{2006-08-21}%DIFDELCMD < \\
+\DIFdelFL{2006-08-19 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-08-21}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-11-07 }%DIFDELCMD < & %%%
-\DIFdel{2006-11-12}%DIFDELCMD < \\
+\DIFdelFL{2006-11-07 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-11-12}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-11-28 }%DIFDELCMD < & %%%
-\DIFdel{2006-11-29}%DIFDELCMD < \\
+\DIFdelFL{2006-11-28 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-11-29}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-12-01 }%DIFDELCMD < & %%%
-\DIFdel{2006-12-14}%DIFDELCMD < \\
+\DIFdelFL{2006-12-01 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-12-14}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2006-12-15 }%DIFDELCMD < & %%%
-\DIFdel{2006-12-15}%DIFDELCMD < \\
+\DIFdelFL{2006-12-15 }%DIFDELCMD < & %%%
+\DIFdelFL{2006-12-15}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2007-11-18 }%DIFDELCMD < & %%%
-\DIFdel{2007-11-20}%DIFDELCMD < \\
+\DIFdelFL{2007-11-18 }%DIFDELCMD < & %%%
+\DIFdelFL{2007-11-20}%DIFDELCMD < \\
 %DIFDELCMD < %%%
-\DIFdel{2007-11-22 }%DIFDELCMD < & %%%
-\DIFdel{2007-11-22}%DIFDELCMD < \\
+\DIFdelFL{2007-11-22 }%DIFDELCMD < & %%%
+\DIFdelFL{2007-11-22}%DIFDELCMD < \\
 %DIFDELCMD < \hline
 %DIFDELCMD < \end{tabular}
-%DIFDELCMD < \label{intervals}
+%DIFDELCMD < %DIFDELCMD < \label{intervals}%%%
 %DIFDELCMD < \end{table}
 %DIFDELCMD < 
 
@@ -290,24 +285,21 @@ The performance of each model in \DIFdelbegin \DIFdel{predicting }\DIFdelend \DI
 }
 
 \DIFadd{The mean-squared-error for model $m$ on day $D$ is
-}\begin{equation*}\DIFadd{
-\mbox{MSE}_m = \frac{1}{N}\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2 \,,
+}\begin{equation*}
+\DIFadd{\mbox{MSE}_m = \frac{1}{N}\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2 \,,
 }\end{equation*}
 \noindent
 \DIFadd{where $GIC_m(t)$ is the model prediction of model $m$ given in Table~\ref{results} at time step $t$, $t_o=600$, and $t_f=85800$, so that sum is over one day of one-second-cadence measurements excluding the first and last 10~minutes.
 }\DIFaddend 
 
 The prediction efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is \DIFdelbegin \DIFdel{defined as PE = 1 - variance(Prediction Error)/variance(Predicted); it }\DIFdelend \DIFaddbegin \DIFadd{calculated for day $D$ using 
-}\begin{equation*}\DIFadd{
-\mbox{PE}_m = 1 - \frac{\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2}{\sum_{t=t_o}^{t_f} \big(GIC(t)-\overline{GIC(t)}\big)^2}\,,
+}\begin{equation*}
+\DIFadd{\mbox{PE}_m = 1 - \frac{\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2}{\sum_{t=t_o}^{t_f} \big(GIC(t)-\overline{GIC(t)}\big)^2}\,,
 }\end{equation*}
 \noindent
 \DIFadd{where $\overline{GIC(t)}$ is an average over the same time interval used in the summations. The PE }\DIFaddend is a measure of the skill of the model relative to the variance in the data that are predicted and it represents the fraction of the variance in the data that \DIFaddbegin \DIFadd{is }\DIFaddend predicted by the model.
 
-The average PE and \DIFaddbegin \DIFadd{the }\DIFaddend MSE ratios were computed by averaging the out-of-sample \DIFdelbegin \DIFdel{PE }\DIFdelend \DIFaddbegin \DIFadd{PEs }\DIFaddend and MSE ratios\DIFdelbegin \DIFdel{; the average signal-to-noise ratio at a given frequency is the average of the out-of-sample signal-to-noise ratios at that frequency}\DIFdelend . The 95\% confidence interval, CI, on the PE and MSE ratio was calculated using \DIFdelbegin \DIFdel{1000 bootstrap }\DIFdelend \DIFaddbegin \DIFadd{the bootstrap method \mbox{%DIFAUXCMD
-\citep{Zoubir1998}
-}%DIFAUXCMD
-: 1000 }\DIFaddend samples of the out-of-sample prediction metrics \DIFaddbegin \DIFadd{were used to compute the CIs}\DIFaddend . (The typical difference between the limits when the confidence intervals were computed assuming the values were Gaussian-distributed was $\sim$2\%.) 
+The average PE and \DIFaddbegin \DIFadd{the }\DIFaddend MSE ratios were computed by averaging the out-of-sample \DIFdelbegin \DIFdel{PE }\DIFdelend \DIFaddbegin \DIFadd{PEs }\DIFaddend and MSE ratios\DIFdelbegin \DIFdel{; the average signal-to-noise ratio at a given frequency is the average of the out-of-sample signal-to-noise ratios at that frequency}\DIFdelend . The 95\% confidence interval, CI, on the PE and MSE ratio was calculated using \DIFdelbegin \DIFdel{1000 bootstrap }\DIFdelend \DIFaddbegin \DIFadd{the bootstrap method }\citep{Zoubir1998}\DIFadd{: 1000 }\DIFaddend samples of the out-of-sample prediction metrics \DIFaddbegin \DIFadd{were used to compute the CIs}\DIFaddend . (The typical difference between the limits when the confidence intervals were computed assuming the values were Gaussian-distributed was $\sim$2\%.) 
 \DIFdelbegin \DIFdel{The spectra for the signal and prediction error for each of the segments at a given evaluation frequency}\DIFdelend \DIFaddbegin 
 
 \DIFadd{The signal-to-noise ratio on day $D$ at a given evaluation frequency is the ratio of of the smoothed power spectrum value of $GIC$ to the smoothed power spectrum value of the prediction error at that evaluation frequency. The smoothed spectrum }\DIFaddend was obtained by averaging the raw \DIFdelbegin \DIFdel{spectra using }\DIFdelend \DIFaddbegin \DIFadd{spectrum in }\DIFaddend the same frequency \DIFdelbegin \DIFdel{windows }\DIFdelend \DIFaddbegin \DIFadd{bands }\DIFaddend used for the regression. \DIFaddbegin \DIFadd{The average signal-to-noise ratio at a given evaluation frequency is the average of the 35 out-of-sample signal-to-noise ratios at that frequency.
@@ -419,13 +411,8 @@ There are at least three possible explanations a frequency dependence in data-de
 %DIFDELCMD < 
 
 %DIFDELCMD < %%%
-\DIFdelend (3) The equation of Model~1 assumes that the electric field is spatially uniform at all points in the systems. \DIFaddbegin \DIFadd{(An equation of this form can be computed in principle for an electric field with an arbitrary spatial distribution but most often the electric field is assumed to be spatially uniform). }\DIFaddend The exact calculation of GICs in a power system under the quasi-DC assumption requires knowledge of the \DIFdelbegin \DIFdel{earth potential at the grounding }\DIFdelend \DIFaddbegin \DIFadd{electric field at all }\DIFaddend points of the system, and simulations of GIC flow \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
-\citep{Albertson1981,Lehtinen1985}
-}%DIFAUXCMD
-}\DIFdelend typically start with an assumed electric field along the lines to calculate \DIFdelbegin \DIFdel{these potential differences. The potential differences }\DIFdelend \DIFaddbegin \DIFadd{input voltages \mbox{%DIFAUXCMD
-\citep{Albertson1981,Lehtinen1985, Horton2012}
-}%DIFAUXCMD
-. The voltages }\DIFaddend are then used along with the DC system component resistances and their connectivity to calculate GIC in the different parts of the system. In both Model~1 and Model~2, the input electric field is assumed to be spatially uniform along the line in which GIC was measured so that the potential difference is directly proportional to the electric field. \DIFdelbegin \DIFdel{If it is not, the parameters }\DIFdelend \DIFaddbegin \DIFadd{Spatial variations in the electric field measured on Earth's surface can be due to horizontal variations in the incident electric field and horizontal variations in sub-surface conductivity, including those at land-ocean interfaces. If a spatial variation exists along the line in which GIC was measured, the coefficients }\DIFaddend derived from the data in both models may differ significantly from those calculated using system configuration and resistance information. However, the data-derived \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend will not have a frequency dependence that results from a variation in the direction of the electric field along the line.
+\DIFdelend (3) The equation of Model~1 assumes that the electric field is spatially uniform at all points in the systems. \DIFaddbegin \DIFadd{(An equation of this form can be computed in principle for an electric field with an arbitrary spatial distribution but most often the electric field is assumed to be spatially uniform). }\DIFaddend The exact calculation of GICs in a power system under the quasi-DC assumption requires knowledge of the \DIFdelbegin \DIFdel{earth potential at the grounding }\DIFdelend \DIFaddbegin \DIFadd{electric field at all }\DIFaddend points of the system, and simulations of GIC flow \DIFdelbegin %DIFDELCMD < \citep{Albertson1981,Lehtinen1985} %%%
+\DIFdelend typically start with an assumed electric field along the lines to calculate \DIFdelbegin \DIFdel{these potential differences. The potential differences }\DIFdelend \DIFaddbegin \DIFadd{input voltages }\citep{Albertson1981,Lehtinen1985, Horton2012}\DIFadd{. The voltages }\DIFaddend are then used along with the DC system component resistances and their connectivity to calculate GIC in the different parts of the system. In both Model~1 and Model~2, the input electric field is assumed to be spatially uniform along the line in which GIC was measured so that the potential difference is directly proportional to the electric field. \DIFdelbegin \DIFdel{If it is not, the parameters }\DIFdelend \DIFaddbegin \DIFadd{Spatial variations in the electric field measured on Earth's surface can be due to horizontal variations in the incident electric field and horizontal variations in sub-surface conductivity, including those at land-ocean interfaces. If a spatial variation exists along the line in which GIC was measured, the coefficients }\DIFaddend derived from the data in both models may differ significantly from those calculated using system configuration and resistance information. However, the data-derived \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend will not have a frequency dependence that results from a variation in the direction of the electric field along the line.
 
 The second assumption of Model~1 is that the spectrum of the electric field is uniform. Violation of this assumption can lead to an apparent violation of the quasi-static approximation. Suppose the electric field and GIC are measured at one end of a long line segment and the electric field is non-zero only at a frequency of $\omega_1$. If the electric field is spectrally uniform along the full line segment, then from the quasi-static approximation it follows that the measured GIC will also only be non-zero at a frequency of $\omega_1$. If the electric field on the far half of the line is non-zero only at a frequency of $\omega_2$, the observed GIC and electric field will appear to be inconsistent with the quasi-static approximation because GIC will have non-zero variations at both $\omega_1$ and $\omega_2$.
 
@@ -603,11 +590,11 @@ Magnetic and electric field \DIFdelbegin \DIFdel{data }\DIFdelend \DIFaddbegin \
 \end{table}
 
 \begin{table}
-\caption{\DIFaddFL{Periods associated with evaluation frequency bands used for regression and smoothing spectra. }\# \DIFaddFL{is the evaluation frequency number, $N$ is the number of DFT points in the window, and $T_e=1/f_e$. The window range is $T_l$ through $T_h$.}}
+\caption{\DIFaddFL{Periods associated with evaluation frequency bands used for regression and smoothing spectra. \# is the evaluation frequency number, $N$ is the number of DFT points in the window, and $T_e=1/f_e$. The window range is $T_l$ through $T_h$.}}
 \centering
 \begin{tabular}{l l l l l}
 \hline \\
-\# & \DIFaddFL{$N$ }& \DIFaddFL{$T_e$ }[\DIFaddFL{s}] & \DIFaddFL{$T_l$ }[\DIFaddFL{s}] & \DIFaddFL{$T_h$ }[\DIFaddFL{s}] \\
+\DIFaddFL{\# }& \DIFaddFL{$N$ }& \DIFaddFL{$T_e$ }[\DIFaddFL{s}] & \DIFaddFL{$T_l$ }[\DIFaddFL{s}] & \DIFaddFL{$T_h$ }[\DIFaddFL{s}] \\
 \hline \\
 \DIFaddFL{1 }& \DIFaddFL{2 }& \DIFaddFL{43200 }& \DIFaddFL{28800 }& \DIFaddFL{86400 }\\
 \DIFaddFL{2 }& \DIFaddFL{2 }& \DIFaddFL{28800 }& \DIFaddFL{21600 }& \DIFaddFL{43200 }\\
