@@ -521,7 +521,7 @@
 \let\@evenfoot\@oddfoot
 %% \thejournalname set with \journalname{} command; if not you will get a request to set
 %% the journal name with \journalname{}
-\def\@oddhead{\vbox to 0pt{\vss\centerline{\color{ltgray}\small Submitted to {\it \thejournalname} 2019-04-22} \vskip24pt}}
+\def\@oddhead{\vbox to 0pt{\vss\centerline{\color{ltgray}\small Revision Submitted to {\it \thejournalname} 2019-07-XX} \vskip24pt}}
 \let\@evenhead\@oddhead
 }
 
