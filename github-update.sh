@@ -1,5 +1,7 @@
 git pull
 
+cd figures
+
 DIR=../../figures/combined
 
 cp ../../map/map.pdf .
