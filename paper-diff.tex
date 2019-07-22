@@ -1,7 +1,7 @@
 \documentclass[draft,linenumbers]{agujournal2018}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL paper-submitted-1.tex   Tue Jul 16 17:41:03 2019
-%DIF ADD paper.tex               Thu Jul 18 16:49:57 2019
+%DIF DEL paper-submitted-1.tex   Mon Jul 22 09:25:20 2019
+%DIF ADD paper.tex               Mon Jul 22 09:25:20 2019
 \usepackage{apacite}
 %DIF 3c3
 %DIF < \usepackage{url} %this package should fix any errors with URLs in refs.
@@ -44,8 +44,6 @@
 \providecommand{\DIFaddend}{} %DIF PREAMBLE
 \providecommand{\DIFdelbegin}{} %DIF PREAMBLE
 \providecommand{\DIFdelend}{} %DIF PREAMBLE
-\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
-\providecommand{\DIFmodend}{} %DIF PREAMBLE
 %DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
 \providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
 \providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
@@ -53,6 +51,8 @@
 \providecommand{\DIFaddendFL}{} %DIF PREAMBLE
 \providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
 \providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
 %DIF HYPERREF PREAMBLE %DIF PREAMBLE
 \providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
 \providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
@@ -62,14 +62,12 @@
 
 %DIF <  Not working
 %DIF <  \listoftodos
-\DIFaddbegin \title{\DIFadd{A Test of the Frequency Independence Assumption of Power System Coefficients used in Geomagnetically Induced Current Estimates}}
-\DIFaddend 
-
-\DIFdelbegin %DIFDELCMD < \title{A Test of the Frequency Independence Assumption of Power System Parameters used in Geomagnetically Induced Current Estimates}
-%DIFDELCMD < 
+\DIFdelbegin %DIFDELCMD < 
 
 %DIFDELCMD < %%%
-\DIFdelend \authors{R.S. Weigel\affil{1} and P.J. Cilliers\affil{2}}
+\DIFdelend \title{A Test of the Frequency Independence Assumption of Power System \DIFdelbegin \DIFdel{Parameters }\DIFdelend \DIFaddbegin \DIFadd{Coefficients }\DIFaddend used in Geomagnetically Induced Current Estimates}
+
+\authors{R.S. Weigel\affil{1} and P.J. Cilliers\affil{2}}
 
 %DIF < Weigel: http://orcid.org/0000-0002-9521-5228
 %DIF < Cilliers: http://orcid.org/0000-0003-3175-5134
@@ -91,7 +89,8 @@
 \end{keypoints}
 
 \begin{abstract}
-A common assumption used when estimating geomagnetically induced currents (GICs) in a power system given a time series of nearby direct measurements or indirect estimates of the horizontal geoelectric field components $E_x(t)$ and $E_y(t)$ on Earth's surface is that the system is resistive. That is, the approximation $GIC(t)$  $=$ $a_oE_x(t) + b_oE_y(t)$ (Model 1) is used, where $a_o$ and $b_o$ are frequency-independent \DIFdelbegin \DIFdel{network parameters}\DIFdelend \DIFaddbegin \DIFadd{power system coefficients}\DIFaddend .  A first test of this assumption is made using GIC measurements \DIFdelbegin \DIFdel{made }\DIFdelend in a 187 kV transformer connected to a $\sim$100~km power line in Memanbetsu, Japan and geoelectric field measurements made at the Memanbetsu Magnetic Observatory $\sim$9~km away. A second model (Model 2) is obtained using a frequency domain generalization of Model 1: $GIC(\omega)$ $=$ $a(\omega)E_x(\omega) + b(\omega)E_y(\omega)$. The \DIFdelbegin \DIFdel{network parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend $a(\omega)$ and $b(\omega)$ are computed from data and are shown to be frequency dependent and this model provides significantly better estimates of the measured GIC than Model\DIFaddbegin \DIFadd{~}\DIFaddend 1. \DIFdelbegin \DIFdel{A third model, which uses the electric field estimated by convolving a magnetotelluric transfer function with the geomagnetic field, provides significantly better estimates over Model~2. }\DIFdelend Based on results using a simulated geoelectric field, it is suggested that the measurement-derived frequency dependence of the system \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend may be explained by spatial variations in the spectrum of the geoelectric field along the line in which GIC is measured rather than by an actual frequency dependence of the system \DIFdelbegin \DIFdel{parameters. }%DIFDELCMD < 
+A common assumption used when estimating geomagnetically induced currents (GICs) in a power system given a time series of nearby direct measurements or indirect estimates of the horizontal geoelectric field components $E_x(t)$ and $E_y(t)$ on Earth's surface is that the system is resistive. That is, the approximation $GIC(t)$  $=$ $a_oE_x(t) + b_oE_y(t)$ (Model 1) is used, where $a_o$ and $b_o$ are frequency-independent \DIFdelbegin \DIFdel{network parameters}\DIFdelend \DIFaddbegin \DIFadd{power system coefficients}\DIFaddend .  A first test of this assumption is made using GIC measurements \DIFdelbegin \DIFdel{made }\DIFdelend in a 187 kV transformer connected to a $\sim$100~km power line in Memanbetsu, Japan and geoelectric field measurements made at the Memanbetsu Magnetic Observatory $\sim$9~km away. A second model (Model 2) is obtained using a frequency domain generalization of Model 1: $GIC(\omega)$ $=$ $a(\omega)E_x(\omega) + b(\omega)E_y(\omega)$. The \DIFdelbegin \DIFdel{network parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend $a(\omega)$ and $b(\omega)$ are computed from data and are shown to be frequency dependent and this model provides significantly better estimates of the measured GIC than Model\DIFaddbegin \DIFadd{~}\DIFaddend 1. \DIFdelbegin \DIFdel{A third model, which uses the electric field estimated by convolving a magnetotelluric transfer function with the geomagnetic field, provides significantly better estimates over Model~2. }\DIFdelend Based on results using a simulated geoelectric field, it is suggested that the measurement-derived frequency dependence of the system \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend may be explained by spatial variations in the spectrum of the geoelectric field along the line in which GIC is measured rather than by an actual frequency dependence of the system \DIFdelbegin \DIFdel{parameters.
+}%DIFDELCMD < 
 
 %DIFDELCMD < %%%
 %DIF < Network parameters $a(\omega)$ and $b(\omega)$ computed from data in Model 2, $GIC(\omega)$ $=$ $a(\omega)E_x(\omega) + b(\omega)E_y(\omega)$, are shown to be frequency dependent and this model provides a significantly better estimates of the measured GIC over Model~1. 
@@ -173,7 +172,7 @@ The 1-second-cadence GIC data used span a total of 35 days across 10 intervals t
 \DIFdelFL{2007-11-22}%DIFDELCMD < \\
 %DIFDELCMD < \hline
 %DIFDELCMD < \end{tabular}
-%DIFDELCMD < \label{intervals}
+%DIFDELCMD < %DIFDELCMD < \label{intervals}%%%
 %DIFDELCMD < \end{table}
 %DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \DIFadd{GIC was measured in a grounded neutral point of a Y-connected three-phase transformer connected to the 187 kV bus at the Memanbetsu substation of the Hokkaido Power Co. The 187 kV line extends from the Ashro to Memanbetsu substation, which are both grounded. Memanbetsu is an end point of the line.
@@ -216,13 +215,12 @@ G_E(\omega) = a(\omega)E_x(\omega) + b(\omega)E_y(\omega)
 \end{equation}
 \end{linenomath*}
 \noindent
-and \DIFdelbegin \DIFdel{are computed using contemporaneous measurements }\DIFdelend \DIFaddbegin \DIFadd{were estimated using the Fourier transforms }\DIFaddend of  $GIC(t)$ and $\mathbf{E}(t)$\DIFdelbegin \DIFdel{. The method of parameter estimation and generating predictions for Models 2-4 }\DIFdelend \DIFaddbegin \DIFadd{; the method of coefficient estimation and the generation of time-domain GIC estimates for this and the following models }\DIFaddend are given at the end of this section\DIFdelbegin \DIFdel{and fourier transformed variables are indicated by explicitly listing their dependence on $\omega$. }\DIFdelend \DIFaddbegin \DIFadd{.
-}\DIFaddend 
-
-\DIFaddbegin \DIFadd{Motivated by the results described in the following section, in which Model~2 provides a significantly better representation of GIC than Model~1, we have also considered two additional models that can be used to estimate GIC. In these two models, a direct measurement of the geoelectric field is not used; instead, the driver is the geomagnetic field, which is much more frequently measured, and as a result, these models may be of practical interest.
+and \DIFdelbegin \DIFdel{are computed using contemporaneous measurements }\DIFdelend \DIFaddbegin \DIFadd{were estimated using the Fourier transforms }\DIFaddend of  $GIC(t)$ and $\mathbf{E}(t)$\DIFdelbegin \DIFdel{. The method of parameter estimation and generating predictions for Models 2-4 }\DIFdelend \DIFaddbegin \DIFadd{; the method of coefficient estimation and the generation of time-domain GIC estimates for this and the following models }\DIFaddend are given at the end of this section\DIFdelbegin \DIFdel{and fourier transformed variables are indicated by explicitly listing their dependence on $\omega$}\DIFdelend \DIFaddbegin \DIFadd{.
 }
 
-\DIFaddend In Model~3, the \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend $a(\omega)$ and $b(\omega)$ from Model~2 are used, but with an electric field $\mathbf{E}'$ computed using the measured magnetic field, $\mathbf{B}$, and a transfer function $\boldsymbol{Z}$: $\mathbf{E}'(\omega) \equiv \boldsymbol{Z}(\omega)\mathbf{B}(\omega)$ and
+\DIFadd{Motivated by the results described in the following section, in which Model~2 provides a significantly better representation of GIC than Model~1, we have also considered two additional models that can be used to estimate GIC. In these two models, a direct measurement of the geoelectric field is not used; instead, the driver is the geomagnetic field, which is much more frequently measured, and as a result, these models may be of practical interest}\DIFaddend .
+
+In Model~3, the \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend $a(\omega)$ and $b(\omega)$ from Model~2 are used, but with an electric field $\mathbf{E}'$ computed using the measured magnetic field, $\mathbf{B}$, and a transfer function $\boldsymbol{Z}$: $\mathbf{E}'(\omega) \equiv \boldsymbol{Z}(\omega)\mathbf{B}(\omega)$ and
 
 \setcounter{equation}{2}
 \begin{linenomath*}
@@ -293,17 +291,17 @@ Several modifications to this basic procedure were considered. Robust regression
 
 Out-of-sample \DIFdelbegin \DIFdel{prediction }\DIFdelend \DIFaddbegin \DIFadd{estimation quality }\DIFaddend metrics for each model on day $D$ were determined by computing the average model \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend using the remaining 34 days of data and then using these averaged \DIFdelbegin \DIFdel{parameters to generate a prediction }\DIFdelend \DIFaddbegin \DIFadd{coefficients to generate GIC }\DIFaddend time series and associated metrics on day $D$. This process was repeated to create a set of 35 out-of-sample prediction metrics for each model. In calculating the metrics, the first and last 10 minutes of the day were excluded to reduce the influence of transients that exist in the \DIFdelbegin \DIFdel{prediction }\DIFdelend \DIFaddbegin \DIFadd{estimate }\DIFaddend at the start of the interval for the amount of time that the causal part of the \DIFdelbegin \DIFdel{impulse response }\DIFdelend \DIFaddbegin \DIFadd{transfer function impulse responses (computed by Fourier inversion of the interpolated transfer function components) }\DIFaddend is non-zero and at the end for the amount of time that the acausal part of the impulse \DIFdelbegin \DIFdel{response is }\DIFdelend \DIFaddbegin \DIFadd{responses are }\DIFaddend non-zero.
 
-The performance of each model in \DIFdelbegin \DIFdel{predicting }\DIFdelend \DIFaddbegin \DIFadd{estimating }\DIFaddend GIC was assessed using three metrics: the prediction efficiency, PE, the mean-squared-error (MSE) ratio, and the signal-to-noise ratio \DIFaddbegin \DIFadd{(SN)}\DIFaddend . 
+The performance of each model in \DIFdelbegin \DIFdel{predicting }\DIFdelend \DIFaddbegin \DIFadd{estimating }\DIFaddend GIC was assessed using three metrics: the prediction efficiency, PE, the mean-squared-error (MSE) ratio, and the signal-to-noise ratio \DIFaddbegin \DIFadd{(SN). 
+}
 
-The \DIFdelbegin \DIFdel{prediction }\DIFdelend \DIFaddbegin \DIFadd{mean-squared-error for model $m$ on day $D$ is
+\DIFadd{The mean-squared-error for model $m$ on day $D$ is
 }\begin{equation*}
 \DIFadd{\mbox{MSE}_m = \frac{1}{N}\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2 \,,
 }\end{equation*}
 \noindent
-\DIFadd{where $GIC_m(t)$ is the model prediction of model $m$ at time step $t$, $t_o=600$, and $t_f=85800$, so that sum is over one day of one-second-cadence measurements excluding the first and last 10~minutes. The MSE ratio for model $m$ is MSE$_1$/MSE$_m$.
-}
+\DIFadd{where $GIC_m(t)$ is the model prediction of model $m$ at time step $t$, $t_o=600$, and $t_f=85800$, so that sum is over one day of one-second-cadence measurements excluding the first and last 10~minutes. The MSE ratio for model $m$ is MSE$_1$/MSE$_m$}\DIFaddend .
 
-\DIFadd{The prediction }\DIFaddend efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is \DIFdelbegin \DIFdel{defined as PE = 1 - variance(Prediction Error)/variance(Predicted); it }\DIFdelend \DIFaddbegin \DIFadd{calculated for day $D$ using 
+The prediction efficiency, PE, is the ``Case I'' skill score described by \cite{Murphy1988} and is \DIFdelbegin \DIFdel{defined as PE = 1 - variance(Prediction Error)/variance(Predicted); it }\DIFdelend \DIFaddbegin \DIFadd{calculated for day $D$ using 
 }\begin{equation*}
 \DIFadd{\mbox{PE}_m = 1 - \frac{\sum_{t=t_o}^{t_f} \big(GIC(t)-GIC_m(t)\big)^2}{\sum_{t=t_o}^{t_f} \big(GIC(t)-\overline{GIC(t)}\big)^2}\,,
 }\end{equation*}
@@ -313,16 +311,14 @@ The \DIFdelbegin \DIFdel{prediction }\DIFdelend \DIFaddbegin \DIFadd{mean-square
 The average PE and \DIFaddbegin \DIFadd{the }\DIFaddend MSE ratios were computed by averaging the out-of-sample \DIFdelbegin \DIFdel{PE }\DIFdelend \DIFaddbegin \DIFadd{PEs }\DIFaddend and MSE ratios\DIFdelbegin \DIFdel{; the average signal-to-noise ratio at a given frequency is the average of the out-of-sample signal-to-noise ratios at that frequency}\DIFdelend . The 95\% confidence interval, CI, on the PE and MSE ratio was calculated using \DIFdelbegin \DIFdel{1000 bootstrap }\DIFdelend \DIFaddbegin \DIFadd{the bootstrap method }\citep{Zoubir1998}\DIFadd{: 1000 }\DIFaddend samples of the out-of-sample prediction metrics \DIFaddbegin \DIFadd{were used to compute the CIs}\DIFaddend . (The typical difference between the limits when the confidence intervals were computed assuming the values were Gaussian-distributed was $\sim$2\%.) 
 \DIFdelbegin \DIFdel{The spectra for the signal and prediction error for each of the segments at a given evaluation frequency}\DIFdelend \DIFaddbegin 
 
-\DIFadd{The signal-to-noise ratio on day $D$ at a given evaluation frequency is the ratio of of the smoothed power spectrum value of $GIC(\omega_e)$ to the smoothed power spectrum value of the prediction error at that evaluation frequency. A smoothed spectrum }\DIFaddend was obtained by averaging the raw \DIFdelbegin \DIFdel{spectra using }\DIFdelend \DIFaddbegin \DIFadd{spectrum in }\DIFaddend the same frequency \DIFdelbegin \DIFdel{windows }\DIFdelend \DIFaddbegin \DIFadd{bands }\DIFaddend used for the regression \DIFdelbegin \DIFdel{. 
-}\DIFdelend \DIFaddbegin \DIFadd{described in Section~\ref{section:Models_and_Methods}. The average signal-to-noise ratio at a given evaluation frequency is the average of the 35 out-of-sample signal-to-noise ratios at that frequency.
-}\DIFaddend 
-
-\DIFaddbegin \section{\DIFadd{Results}}
-
-\DIFadd{The PE and MSE ratios are shown in Table~\ref{results}. Figure~\ref{predictions} shows the predictions for each model in a 1-day interval selected because the value of the prediction efficiency for each model was in the same order as that shown in Table~\ref{results}, i.e., Model~1 has the lowest PE and Model~4 has the highest. Note that the large errors visible at the start and end of the time intervals are due to the transients discussed in Section~\ref{section:Model_Evaluation} and the first and last 10~minutes of each interval were omitted from metrics calculations.
+\DIFadd{The signal-to-noise ratio on day $D$ at a given evaluation frequency is the ratio of of the smoothed power spectrum value of $GIC(\omega_e)$ to the smoothed power spectrum value of the prediction error at that evaluation frequency. A smoothed spectrum }\DIFaddend was obtained by averaging the raw \DIFdelbegin \DIFdel{spectra using }\DIFdelend \DIFaddbegin \DIFadd{spectrum in }\DIFaddend the same frequency \DIFdelbegin \DIFdel{windows }\DIFdelend \DIFaddbegin \DIFadd{bands }\DIFaddend used for the regression \DIFaddbegin \DIFadd{described in Section~\ref{section:Models_and_Methods}. The average signal-to-noise ratio at a given evaluation frequency is the average of the 35 out-of-sample signal-to-noise ratios at that frequency.
 }
 
-\DIFaddend \begin{table}
+\section{\DIFadd{Results}}
+
+\DIFadd{The PE and MSE ratios are shown in Table~\ref{results}. Figure~\ref{predictions} shows the predictions for each model in a 1-day interval selected because the value of the prediction efficiency for each model was in the same order as that shown in Table~\ref{results}, i.e., Model~1 has the lowest PE and Model~4 has the highest. Note that the large errors visible at the start and end of the time intervals are due to the transients discussed in Section~\ref{section:Model_Evaluation} and the first and last 10~minutes of each interval were omitted from metrics calculations}\DIFaddend .
+
+\begin{table}
 \caption{Out-of-sample model performance metrics for \DIFdelbeginFL \DIFdelFL{models $m=1-4$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Model $m$}\DIFaddendFL . MSE\DIFdelbeginFL \DIFdelFL{$_m$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$_1$}\DIFaddendFL /MSE\DIFdelbeginFL \DIFdelFL{$_1$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$_m$ }\DIFaddendFL is the \DIFaddbeginFL \DIFaddFL{MSE }\DIFaddendFL ratio of \DIFdelbeginFL \DIFdelFL{the MSE for model $m$ }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Model~1 with respect }\DIFaddendFL to that of Model \DIFdelbeginFL \DIFdelFL{1. }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{$m$. }\DIFaddendFL The PE and MSE ratios are the average of 35 values and the confidence interval, CI, was determined from 1000 bootstrap samples.}
 \centering
 \begin{tabular}{l c c c c}
@@ -380,18 +376,18 @@ The ratio of $|\overline{b}_o|/|\overline{a}_o|$ is approximately 1 for Model~1 
 }\DIFdelend 
 
 Figure~\ref{Phi} shows the transfer function phases (that for Model~1 is 0$^o$ for positive \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend and 180$^o$ for negative \DIFdelbegin \DIFdel{parameters }\DIFdelend \DIFaddbegin \DIFadd{coefficients }\DIFaddend by definition). The phases for $z_x(\omega)$ and $b(\omega)$ are offset by 120$^o$ while the phases for $a(\omega)$ and $b(\omega)$ are significantly different. \DIFaddbegin \DIFadd{At $T=12$~h, the phases of $a(\omega)$ and $b(\omega)$ differ by 180 degrees and the associated signs are consistent with those of $\overline{a}_o$ and $\overline{b}_o$. 
-}\DIFaddend 
+}
 
 %DIF > At $T=12$~h, the phases of $|a(\omega)|$ and $|b(\omega)|$ match that of $|\overline{b}_o|$ and $|\overline{a}_o|$ and the ratio of  $|b(\omega)|/|a(\omega)|$ of 1.6 is the closest it gets to that of $|\overline{b}_o|/|\overline{a}_o|$ of approximately 1. However, the absolute values of $a(\omega)$ and $b(\omega)$ are significantly larger than $a_o$ and $b_o$
- \DIFaddbegin 
 
 %DIF > From Figure~\ref{Z} and Figure~\ref{Phi}, it follows that the In Figure~\ref{Phi}, at $T=12$~h, the phase difference between $a(\omega)$ and $b(\omega)$ of 180 degrees is the same as that for $a_o$ and $b_o$. In addition the ratio of $|b(\omega)|/|a(\omega)| =1.6$ is nearest to the frequency independent value predicted by Model~1 of $|\overline{b}_o|/|\overline{a}_o| = 1$.
+\DIFaddend 
 
-\DIFaddend Figure~\ref{Z_MT} and~\ref{Phi_MT} show the parameters for $\mathbf{Z}$ in Model~3. Note that electric and magnetic field data from \DIFdelbegin \DIFdel{Memambetsu}\DIFdelend \DIFaddbegin \DIFadd{Memanbetsu}\DIFaddend , Japan were also used by \cite{Fujii2015} to compute $\mathbf{Z}$. When using the \cite{Fujii2015} transfer function for Model~3, the PE was significantly lower (0.58 vs. 0.78). (The \cite{Fujii2015} transfer function was obtained from the IRIS DMC EMTF database [\cite{Kelbert2011}]). Although not critical to the \DIFdelbegin \DIFdel{issues addressed }\DIFdelend \DIFaddbegin \DIFadd{conclusions }\DIFaddend in this work, a preliminary investigation suggests \DIFdelbegin \DIFdel{that the cause is due to several factors}\DIFdelend \DIFaddbegin \DIFadd{several explanations}\DIFaddend . We have found that when using continuous one-month intervals prior to 2006 to compute $\mathbf{Z}$, our calculated transfer function matches the \cite{Fujii2015} transfer function to within the error bars except below periods of 100~s, which is likely explained by the issues with the electric field response in the 1-second-cadence measurements discussed in \cite{Fujii2015}. After 2006, our calculated transfer functions differ significantly from that in \cite{Fujii2015} - they are shifted downward by approximately 10-50\%. In addition, we have found that the estimated transfer function is sensitive to whether or not segment averaging was used. Due to the large gaps between and the varying length of continuous \DIFdelbegin \DIFdel{data segments }\DIFdelend \DIFaddbegin \DIFadd{segments of data }\DIFaddend used in this work, transfer function parameters were computed using one-day segments of data and then averaged. We have found that if a continuous set of measurements over approximately 21 days is used to compute a single transfer function, the transfer function magnitudes are up to 25\% \DIFdelbegin \DIFdel{higher }\DIFdelend \DIFaddbegin \DIFadd{larger }\DIFaddend than if 21 transfer functions were computed and then averaged. \DIFaddbegin \DIFadd{This result is unexpected, and extensive successful verification tests of our MT calculations along with the fact that this effect has observed by both authors using two different MT calculation codes on different data sets (the other code used was LEMI MT V1.4), suggests the explanation is not due to an error in the code used here to compute transfer functions. We expect to consider this in a future investigation as it suggests that stack averaging can be a significant source of transfer function bias and note that the most likely explanation involves non-stationarity in the noise.
-}\DIFaddend 
+Figure~\ref{Z_MT} and~\ref{Phi_MT} show the parameters for $\mathbf{Z}$ in Model~3. Note that electric and magnetic field data from \DIFdelbegin \DIFdel{Memambetsu}\DIFdelend \DIFaddbegin \DIFadd{Memanbetsu}\DIFaddend , Japan were also used by \cite{Fujii2015} to compute $\mathbf{Z}$. When using the \cite{Fujii2015} transfer function for Model~3, the PE was significantly lower (0.58 vs. 0.78). (The \cite{Fujii2015} transfer function was obtained from the IRIS DMC EMTF database [\cite{Kelbert2011}]). Although not critical to the \DIFdelbegin \DIFdel{issues addressed }\DIFdelend \DIFaddbegin \DIFadd{conclusions }\DIFaddend in this work, a preliminary investigation suggests \DIFdelbegin \DIFdel{that the cause is due to several factors}\DIFdelend \DIFaddbegin \DIFadd{several explanations}\DIFaddend . We have found that when using continuous one-month intervals prior to 2006 to compute $\mathbf{Z}$, our calculated transfer function matches the \cite{Fujii2015} transfer function to within the error bars except below periods of 100~s, which is likely explained by the issues with the electric field response in the 1-second-cadence measurements discussed in \cite{Fujii2015}. After 2006, our calculated transfer functions differ significantly from that in \cite{Fujii2015} - they are shifted downward by approximately 10-50\%. In addition, we have found that the estimated transfer function is sensitive to whether or not segment averaging was used. Due to the large gaps between and the varying length of continuous \DIFdelbegin \DIFdel{data segments }\DIFdelend \DIFaddbegin \DIFadd{segments of data }\DIFaddend used in this work, transfer function parameters were computed using one-day segments of data and then averaged. We have found that if a continuous set of measurements over approximately 21 days is used to compute a single transfer function, the transfer function magnitudes are up to 25\% \DIFdelbegin \DIFdel{higher }\DIFdelend \DIFaddbegin \DIFadd{larger }\DIFaddend than if 21 transfer functions were computed and then averaged. \DIFdelbegin %DIFDELCMD < 
 
+%DIFDELCMD < %%%
 %DIF < As a result, the transfer function parameters are shown in Figure~\ref{Z_MT} and~\ref{phi_MT} should be considered a 
-\DIFdelbegin %DIFDELCMD < 
+%DIFDELCMD < 
 
 %DIFDELCMD < %%%
 %DIF < \cite{Pulkkinen2010} noted that one could estimate the ratio of $a_o/b_o$ using GIC and local geomagnetic field measurements even if $\mathbf{Z}(\omega)$ was unknown if one assumed the ground conductivity was 1-D so that $Z\equiv Z_{xy}=-Z_{yx}$ and $Z_{xx}=Z_{yy}=0$ so that Equation~\ref{model2} can be written
@@ -409,10 +405,10 @@ Figure~\ref{Phi} shows the transfer function phases (that for Model~1 is 0$^o$ f
 %DIFDELCMD < %%%
 %DIF < \noindent
 %DIF < If the above equations are solved for with unknowns $Z_a\equiv a_oZ$ and $Z_b\equiv b_oZ$,  then $a_o/b_o = Z_a(\omega)/Z_b(\omega)$. \cite{Pulkkinen2010} assumed that this ratio was frequency independent and provided a closed-form equation for $a_o/b_o$ by multiplying Equation~\ref{pulkkinen2010} by the complex conjugates of $B_x(\omega)$ and $B_y(\omega)$ so as to form two equations from which $Z$ can be eliminated. With the additional assumption that the cross- and auto-spectra of all variables have the same functional form, they showed that the ratio can be written in a way that requires only evaluation of correlations among $G(t)$, $B_x(t)$, and $B_y(t)$.
-%DIFDELCMD < 
+\DIFdelend \DIFaddbegin \DIFadd{This result is unexpected, and extensive successful verification tests of our MT calculations along with the fact that this effect has observed by both authors using two different MT calculation codes on different data sets (the other code used was LEMI MT V1.4), suggests the explanation is not due to an error in the code used here to compute transfer functions. We expect to consider this in a future investigation as it suggests that stack averaging can be a significant source of transfer function bias and note that the most likely explanation involves non-stationarity in the noise.
+}\DIFaddend 
 
-%DIFDELCMD < %%%
-\DIFdelend \section{Discussion}
+\section{Discussion}
 
 There are at least three possible explanations a frequency dependence in data-derived system \DIFdelbegin \DIFdel{parameters}\DIFdelend \DIFaddbegin \DIFadd{coefficients}\DIFaddend : (1) the quasi-DC approximation is invalid, (2) it is an artifact of the measurement process, and (3) the electric field is not spatially and spectrally constant across the region of the power system. 
 
@@ -527,7 +523,7 @@ Magnetic and electric field \DIFdelbegin \DIFdel{data }\DIFdelend \DIFaddbegin \
 \begin{figure}[h]
 \centering
 \DIFaddendFL \includegraphics[width=\textwidth]{figures/plot_raw_All_20060805.pdf}
-\caption{(Top) Geomagnetic field measured at the Memanbetsu Magnetic Observatory (MMB). (Middle) Geoelectric field measured at the Memanbetsu Magnetic Observatory (MMB)\DIFdelbeginFL \DIFdelFL{, which is $\sim$9 km from the Memanbetsu substation}\DIFdelendFL . \DIFdelbeginFL \DIFdelFL{(Bottom) GIC measurements measured in a grounded neutral point of a Y-connected three-phase transformer connected to a 187 kV bus at the Memanbetsu substation of the Hokkaido Power Co. }\DIFdelendFL The subscripts $x$ and $y$ correspond to Geographic North and East, respectively\DIFaddbeginFL \DIFaddFL{, and the date labels are for Universal Time}\DIFaddendFL .}
+\caption{(Top) Geomagnetic field measured at the Memanbetsu Magnetic Observatory (MMB). (Middle) Geoelectric field measured at the Memanbetsu Magnetic Observatory (MMB)\DIFdelbeginFL \DIFdelFL{, which is $\sim$9 km from the Memanbetsu substation. (Bottom) GIC measurements measured in a grounded neutral point of a Y-connected three-phase transformer connected to a 187 kV bus at the Memanbetsu substation of the Hokkaido Power Co}\DIFdelendFL . The subscripts $x$ and $y$ correspond to Geographic North and East, respectively\DIFaddbeginFL \DIFaddFL{, and the date labels are for Universal Time}\DIFaddendFL .}
 \label{sample}
 \end{figure}
 
